@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetFooter,
@@ -44,8 +45,15 @@ const MobileSheet = () => {
                     <ScrollBar orientation='vertical' />
                 </ScrollArea>
 
-                <SheetFooter className='items-end pr-6'>
-                    <ThemeSelect />
+                <SheetFooter className='pr-6'>
+                    <div className='flex items-center gap-3'>
+                        <SheetClose asChild>
+                            <Button type='button' variant='outline'>
+                                Logout
+                            </Button>
+                        </SheetClose>
+                        <ThemeSelect />
+                    </div>
                 </SheetFooter>
             </SheetContent>
         </Sheet>

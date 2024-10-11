@@ -4,15 +4,10 @@ import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
-import { ThemeSwitcher } from '@/components/theme-switcher';
-import { Button } from '@/components/ui/button';
-
 const Home: NextPageWithLayout = () => {
     return (
         <div className='flex flex-col'>
-            Home
-            <Button>Button</Button>
-            <ThemeSwitcher />
+            <h1>Home</h1>
         </div>
     );
 };
