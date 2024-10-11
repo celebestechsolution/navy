@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import { Toaster } from '@/components/ui/toaster';
+import { DetectDeviceLayout } from './detect-device-layout';
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -15,10 +16,11 @@ const RootLayout = ({ children, title }: RootLayoutProps) => {
             <Head>
                 <title>{title ? `${title} / ${appName}` : `${appName}`}</title>
             </Head>
+            <DetectDeviceLayout>
+                <div className='bg-background-secondary relative flex min-h-dvh flex-col'>{children}</div>
 
-            <div className='bg-background-secondary relative flex min-h-dvh flex-col'>{children}</div>
-
-            <Toaster />
+                <Toaster />
+            </DetectDeviceLayout>
         </>
     );
 };
