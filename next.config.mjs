@@ -20,6 +20,11 @@ const nextConfig = {
                 permanent: true,
             },
             // Auth
+            {
+                destination: '/dashboard',
+                source: '/auth/dashboard',
+                permanent: true,
+            },
         ];
     },
     async rewrites() {
@@ -35,6 +40,10 @@ const nextConfig = {
                 destination: '/guest/login',
             },
             // Auth
+            {
+                source: '/dashboard',
+                destination: '/auth/dashboard',
+            },
         ];
     },
 };

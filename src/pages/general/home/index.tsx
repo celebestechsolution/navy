@@ -2,6 +2,8 @@ import type { NextPageWithLayout } from '@/types/app/next-layout';
 
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Button } from '@/components/ui/button';
+import { GeneralLayout } from '@/layouts/general-layout';
+import { RootLayout } from '@/layouts/root-layout';
 
 const Home: NextPageWithLayout = () => {
     return (
@@ -14,7 +16,11 @@ const Home: NextPageWithLayout = () => {
 };
 
 Home.getLayout = function getLayout(page: React.ReactElement) {
-    return <>{page}</>;
+    return (
+        <RootLayout>
+            <GeneralLayout>{page}</GeneralLayout>
+        </RootLayout>
+    );
 };
 
 export default Home;
