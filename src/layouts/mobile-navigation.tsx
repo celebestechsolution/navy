@@ -6,8 +6,8 @@ import { MobileSheet } from './mobile-sheet';
 const MobileNavigation = () => {
     return (
         <header className='relative'>
-            <nav className='fixed top-0 z-10 w-full border-b bg-background'>
-                <div className='mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6'>
+            <nav className='fixed top-0 z-10 mx-auto w-full max-w-screen-md border-b bg-background'>
+                <div className='flex h-16 items-center justify-between px-4 sm:px-6'>
                     <Link href='/'>
                         <span className='sr-only'>DPMPTSP Logo</span>
                         <ApplicationLogo className='h-8 w-auto' />

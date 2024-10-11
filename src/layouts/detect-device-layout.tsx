@@ -9,17 +9,21 @@ interface DetectDeviceLayoutProps {
 }
 
 const DetectDeviceLayout = ({ children }: DetectDeviceLayoutProps) => {
-    const [isMobile, setIsMobile] = React.useState<boolean>(false);
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    const [isMobile, setIsMobile] = React.useState<boolean>(isProduction ? false : true);
 
     const router = useRouter();
 
     React.useEffect(() => {
-        const userAgent = navigator.userAgent;
+        if (isProduction) {
+            const userAgent = navigator.userAgent;
 
-        if (isDesktop(userAgent)) {
-            router.push('https://marionotes.com/');
-        } else {
-            setIsMobile(true);
+            if (isDesktop(userAgent)) {
+                router.push('https://marionotes.com/');
+            } else {
+                setIsMobile(true);
+            }
         }
     }, [router]);
 
