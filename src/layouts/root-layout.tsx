@@ -1,15 +1,25 @@
-import { MobileNavigation } from './mobile-navigation';
+import Head from 'next/head';
+
+import { Toaster } from '@/components/ui/toaster';
 
 interface RootLayoutProps {
     children: React.ReactNode;
+    title?: string;
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = ({ children, title }: RootLayoutProps) => {
+    const appName = process.env.NEXT_PUBLIC_APP_NAME;
+
     return (
-        <div className='relative flex min-h-dvh flex-col bg-background'>
-            <MobileNavigation />
-            {children}
-        </div>
+        <>
+            <Head>
+                <title>{title ? `${title} / ${appName}` : `${appName}`}</title>
+            </Head>
+
+            <div className='bg-background-secondary relative flex min-h-dvh flex-col'>{children}</div>
+
+            <Toaster />
+        </>
     );
 };
 
