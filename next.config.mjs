@@ -18,6 +18,11 @@ const nextConfig = {
                 source: '/general/siap-boss',
                 permanent: true,
             },
+            {
+                destination: '/rajin',
+                source: '/general/rajin',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -42,6 +47,10 @@ const nextConfig = {
             {
                 source: '/siap-boss',
                 destination: '/general/siap-boss',
+            },
+            {
+                source: '/rajin',
+                destination: '/general/rajin',
             },
             // Guest
             {

@@ -58,7 +58,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Rajin',
-                href: '/dashboard',
+                href: '/rajin',
             },
             {
                 label: 'Paksi',
