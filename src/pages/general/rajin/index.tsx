@@ -1,15 +1,13 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
+import { RajinContent } from '@/features/general/rajin/rajin-content';
+
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
 const RajinPage: NextPageWithLayout = () => {
-    return (
-        <div>
-            <h1>Rajin Page</h1>
-        </div>
-    );
+    return <RajinContent />;
 };
 
 RajinPage.getLayout = function getLayout(page: React.ReactElement) {
