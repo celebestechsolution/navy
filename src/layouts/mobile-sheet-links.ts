@@ -50,19 +50,19 @@ const menus: Menu[] = [
         links: [
             {
                 label: 'SIAP BOSS',
-                href: '/siap-boss',
+                href: '/innovations/siap-boss',
             },
             {
                 label: 'Rajin',
-                href: '/rajin',
+                href: '/innovations/rajin',
             },
             {
                 label: 'Paksi',
-                href: '/paksi',
+                href: '/innovations/paksi',
             },
             {
                 label: 'Jabat Erat',
-                href: '/jabat-erat',
+                href: '/innovations/jabat-erat',
             },
         ],
     },

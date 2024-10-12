@@ -24,23 +24,23 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                destination: '/siap-boss',
-                source: '/general/siap-boss',
+                destination: '/innovations/siap-boss',
+                source: '/general/innovations/siap-boss',
                 permanent: true,
             },
             {
-                destination: '/rajin',
-                source: '/general/rajin',
+                destination: '/innovations/rajin',
+                source: '/general/innovations/rajin',
                 permanent: true,
             },
             {
-                destination: '/paksi',
-                source: '/general/paksi',
+                destination: '/innovations/paksi',
+                source: '/general/innovations/paksi',
                 permanent: true,
             },
             {
-                destination: '/jabat-erat',
-                source: '/general/jabat-erat',
+                destination: '/innovations/jabat-erat',
+                source: '/general/innovations/jabat-erat',
                 permanent: true,
             },
             // Guest
@@ -73,20 +73,20 @@ const nextConfig = {
                 destination: '/general/innovations',
             },
             {
-                source: '/siap-boss',
-                destination: '/general/siap-boss',
+                source: '/innovations/siap-boss',
+                destination: '/general/innovations/siap-boss',
             },
             {
-                source: '/rajin',
-                destination: '/general/rajin',
+                source: '/innovations/rajin',
+                destination: '/general/innovations/rajin',
             },
             {
-                source: '/paksi',
-                destination: '/general/paksi',
+                source: '/innovations/paksi',
+                destination: '/general/innovations/paksi',
             },
             {
-                source: '/jabat-erat',
-                destination: '/general/jabat-erat',
+                source: '/innovations/jabat-erat',
+                destination: '/general/innovations/jabat-erat',
             },
             // Guest
             {

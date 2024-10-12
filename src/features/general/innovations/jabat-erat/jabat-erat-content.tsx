@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import jabatEratLogo from '../../../../public/images/jabat-erat-logo.png';
+import jabatEratLogo from '../../../../../public/images/jabat-erat-logo.png';
 
 const JabatEratContent = () => {
     return (

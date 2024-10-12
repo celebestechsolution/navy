@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import paksiLogo from '../../../../public/images/paksi-logo.png';
+import paksiLogo from '../../../../../public/images/paksi-logo.png';
 
 const PaksiContent = () => {
     return (

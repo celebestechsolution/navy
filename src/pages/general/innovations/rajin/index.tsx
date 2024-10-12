@@ -1,22 +1,22 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
-import { PaksiContent } from '@/features/general/paksi/paksi-content';
+import { RajinContent } from '@/features/general/innovations/rajin/rajin-content';
 
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
-const PaksiPage: NextPageWithLayout = () => {
-    return <PaksiContent />;
+const RajinPage: NextPageWithLayout = () => {
+    return <RajinContent />;
 };
 
-PaksiPage.getLayout = function getLayout(page: React.ReactElement) {
+RajinPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Paksi'>
+        <RootLayout title='Rajin'>
             <MobileNavigation />
             <GeneralLayout>{page}</GeneralLayout>
         </RootLayout>
     );
 };
 
-export default PaksiPage;
+export default RajinPage;

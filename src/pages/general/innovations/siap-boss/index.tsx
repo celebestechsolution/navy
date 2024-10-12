@@ -1,22 +1,22 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
-import { RajinContent } from '@/features/general/rajin/rajin-content';
+import { SiapBossContent } from '@/features/general/innovations/siap-boss/siap-boss-content';
 
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
-const RajinPage: NextPageWithLayout = () => {
-    return <RajinContent />;
+const SiapBossPage: NextPageWithLayout = () => {
+    return <SiapBossContent />;
 };
 
-RajinPage.getLayout = function getLayout(page: React.ReactElement) {
+SiapBossPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Rajin'>
+        <RootLayout title='Siap Boss'>
             <MobileNavigation />
             <GeneralLayout>{page}</GeneralLayout>
         </RootLayout>
     );
 };
 
-export default RajinPage;
+export default SiapBossPage;

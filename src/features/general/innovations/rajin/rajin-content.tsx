@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import rajinLogo from '../../../../public/images/rajin-logo.png';
+import rajinLogo from '../../../../../public/images/rajin-logo.png';
 
 const RajinContent = () => {
     return (

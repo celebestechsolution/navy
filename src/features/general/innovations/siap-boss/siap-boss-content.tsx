@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import siapBossLogo from '../../../../public/images/siap-boss-logo.png';
+import siapBossLogo from '../../../../../public/images/siap-boss-logo.png';
 
 const SiapBossContent = () => {
     return (

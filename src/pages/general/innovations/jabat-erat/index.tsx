@@ -1,6 +1,6 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
-import { JabatEratContent } from '@/features/general/jabat-erat/jabat-erat-content';
+import { JabatEratContent } from '@/features/general/innovations/jabat-erat/jabat-erat-content';
 
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
