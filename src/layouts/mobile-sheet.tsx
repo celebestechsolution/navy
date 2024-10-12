@@ -30,7 +30,7 @@ const MobileSheet = () => {
                     <TablerIcon name='IconMenuDeep' className='size-6 stroke-2 text-primary' />
                 </Button>
             </SheetTrigger>
-            <SheetContent side='left' className='flex min-h-dvh w-4/5 flex-col pr-0'>
+            <SheetContent side='left' className='m-2 flex w-4/5 flex-col rounded-md border pr-0'>
                 <SheetHeader className='space-y-0'>
                     <SheetTitle className='sr-only'>DPMPTSP Pinrang</SheetTitle>
                     <SheetDescription className='sr-only'>Sidebar description from SIAP BOSS APP</SheetDescription>
