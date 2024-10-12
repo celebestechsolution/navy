@@ -50,7 +50,7 @@ const menus: Menu[] = [
         links: [
             {
                 label: 'SIAP BOSS',
-                href: '/',
+                href: '/siap-boss',
             },
             {
                 label: 'Kongsi',

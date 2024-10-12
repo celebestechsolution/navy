@@ -13,6 +13,11 @@ const nextConfig = {
                 source: '/general/home',
                 permanent: true,
             },
+            {
+                destination: '/siap-boss',
+                source: '/general/siap-boss',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -33,6 +38,10 @@ const nextConfig = {
             {
                 source: '/',
                 destination: '/general/home',
+            },
+            {
+                source: '/siap-boss',
+                destination: '/general/siap-boss',
             },
             // Guest
             {
