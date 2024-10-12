@@ -66,7 +66,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Jabat Erat',
-                href: '/dashboard',
+                href: '/jabat-erat',
             },
         ],
     },

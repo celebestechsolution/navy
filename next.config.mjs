@@ -28,6 +28,11 @@ const nextConfig = {
                 source: '/general/paksi',
                 permanent: true,
             },
+            {
+                destination: '/jabat-erat',
+                source: '/general/jabat-erat',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -60,6 +65,10 @@ const nextConfig = {
             {
                 source: '/paksi',
                 destination: '/general/paksi',
+            },
+            {
+                source: '/jabat-erat',
+                destination: '/general/jabat-erat',
             },
             // Guest
             {
