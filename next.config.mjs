@@ -23,6 +23,11 @@ const nextConfig = {
                 source: '/general/rajin',
                 permanent: true,
             },
+            {
+                destination: '/paksi',
+                source: '/general/paksi',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -51,6 +56,10 @@ const nextConfig = {
             {
                 source: '/rajin',
                 destination: '/general/rajin',
+            },
+            {
+                source: '/paksi',
+                destination: '/general/paksi',
             },
             // Guest
             {

@@ -62,7 +62,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Paksi',
-                href: '/dashboard',
+                href: '/paksi',
             },
             {
                 label: 'Jabat Erat',
