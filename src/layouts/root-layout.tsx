@@ -17,7 +17,7 @@ const RootLayout = ({ children, title }: RootLayoutProps) => {
                 <title>{title ? `${title} / ${appName}` : `${appName}`}</title>
             </Head>
             <DetectDeviceLayout>
-                <div className='bg-background-secondary relative flex min-h-dvh flex-col'>{children}</div>
+                <div className='relative flex min-h-dvh flex-col bg-background-secondary'>{children}</div>
 
                 <Toaster />
             </DetectDeviceLayout>
