@@ -12,10 +12,10 @@ interface Menu {
 
 const menus: Menu[] = [
     {
-        label: 'General',
+        label: 'Umum',
         links: [
             {
-                label: 'Home',
+                label: 'Beranda',
                 href: '/',
             },
             {
@@ -51,10 +51,6 @@ const menus: Menu[] = [
             {
                 label: 'SIAP BOSS',
                 href: '/siap-boss',
-            },
-            {
-                label: 'Kongsi',
-                href: '/dashboard',
             },
             {
                 label: 'Rajin',
