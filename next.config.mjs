@@ -14,6 +14,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                destination: '/licensing',
+                source: '/general/licensing',
+                permanent: true,
+            },
+            {
                 destination: '/siap-boss',
                 source: '/general/siap-boss',
                 permanent: true,
@@ -53,6 +58,10 @@ const nextConfig = {
             {
                 source: '/',
                 destination: '/general/home',
+            },
+            {
+                source: '/licensing',
+                destination: '/general/licensing',
             },
             {
                 source: '/siap-boss',
