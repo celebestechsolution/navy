@@ -3,7 +3,7 @@ interface GeneralLayoutProps {
 }
 
 const GeneralLayout = ({ children }: GeneralLayoutProps) => {
-    return <main className='mt-[4rem] min-h-[1000rem]'>{children}</main>;
+    return <main className='mt-[4rem] px-4 py-4'>{children}</main>;
 };
 
 export { GeneralLayout };
