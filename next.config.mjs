@@ -19,6 +19,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                destination: '/innovations',
+                source: '/general/innovations',
+                permanent: true,
+            },
+            {
                 destination: '/siap-boss',
                 source: '/general/siap-boss',
                 permanent: true,
@@ -62,6 +67,10 @@ const nextConfig = {
             {
                 source: '/licensing',
                 destination: '/general/licensing',
+            },
+            {
+                source: '/innovations',
+                destination: '/general/innovations',
             },
             {
                 source: '/siap-boss',

@@ -15,7 +15,7 @@ const JabatEratContent = () => {
                 </h2>
                 <p className='text-sm text-muted-foreground'>
                     JABAT ERAT Merupakan inovasi yang memfasilitasi pelaku usaha mulai dari perizinan usaha, peningkatan
-                    kualitas produk, fasilitasi bantuan permodalan dan fasilitasi pemasaran produkErat).
+                    kualitas produk, fasilitasi bantuan permodalan dan fasilitasi pemasaran produk.
                 </p>
                 <p className='text-sm text-muted-foreground'>
                     JABAT ERAT dirancang untuk membantu pelaku usaha mikro, kecil dan menengah dalam pengurusan
