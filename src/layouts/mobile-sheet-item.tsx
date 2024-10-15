@@ -19,7 +19,8 @@ const MobileSheetItem = ({ setOpen }: MobileSheetItemProps) => {
     }, []);
 
     return (
-        <div className='space-y-2 pr-3'>
+        // <div className='space-y-2 pr-3'>
+        <div className='space-y-2 pe-3 ps-6'>
             {menus.map(({ label, links }, i) => (
                 <div key={i} className='space-y-2'>
                     <span className='text-xs font-medium text-muted-foreground'>{label}</span>
