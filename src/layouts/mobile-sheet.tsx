@@ -109,7 +109,7 @@ const MobileSheet = () => {
                     <TablerIcon name='IconMenuDeep' className='size-6 stroke-2 text-primary' />
                 </Button>
             </SheetTrigger>
-            <SheetContent side='left' className='m-2 flex h-[98vh] w-4/5 flex-col rounded-md border p-0'>
+            <SheetContent side='left' className='m-2 flex w-4/5 flex-col rounded-md border p-0'>
                 <SheetHeader className='space-y-0 border-b p-4'>
                     <SheetTitle className='sr-only'>Sheet Title</SheetTitle>
                     <SheetDescription className='sr-only'>Sheet Description</SheetDescription>
