@@ -6,7 +6,7 @@ export const shadcnPlugin = plugin(
         addBase({
             ':root': {
                 '--background': '0 0% 100%',
-                '--background-secondary': '0 0% 98.43%',
+                '--background-secondary': '0 0% 97.65%',
                 '--foreground': '240 10% 3.9%',
                 '--muted': '240 4.8% 95.9%',
                 '--muted-foreground': '240 3.8% 46.1%',
@@ -121,7 +121,7 @@ export const shadcnPlugin = plugin(
                     },
                 },
                 fontFamily: {
-                    sans: ['Figtree', ...fontFamily.sans],
+                    sans: ['"Plus Jakarta Sans"', ...fontFamily.sans],
                 },
                 keyframes: {
                     'accordion-down': {
