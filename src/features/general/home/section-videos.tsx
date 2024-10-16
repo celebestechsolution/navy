@@ -8,7 +8,11 @@ const SectionVideos = () => {
         <section id='latest-videos' className='space-y-6 py-10'>
             <div className='flex items-center justify-between'>
                 <h5 className='text-base font-semibold text-primary'>Video</h5>
-                <Link href='/' className='text-sm font-normal text-muted-foreground underline'>
+                <Link
+                    href='https://www.youtube.com/@bumilasinrang'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-sm font-normal text-muted-foreground underline'>
                     Lihat Video Lainnya
                 </Link>
             </div>
