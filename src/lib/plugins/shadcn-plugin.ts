@@ -121,7 +121,7 @@ export const shadcnPlugin = plugin(
                     },
                 },
                 fontFamily: {
-                    sans: ['"Plus Jakarta Sans"', ...fontFamily.sans],
+                    sans: ['Figtree', ...fontFamily.sans],
                 },
                 keyframes: {
                     'accordion-down': {
