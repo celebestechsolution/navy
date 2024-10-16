@@ -33,7 +33,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Jenis Daftar Izin',
-                href: '/dashboard',
+                href: '/login',
             },
             {
                 label: 'Jumlah Permohonan Izin',
