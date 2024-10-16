@@ -25,7 +25,7 @@ const NewsBlock = () => {
                               alt={item.title}
                           />
                           <div className='flex flex-col gap-1.5'>
-                              <h3 className='text-base font-semibold text-primary'>{item.title}</h3>
+                              <h3 className='line-clamp-2 text-base font-semibold text-primary'>{item.title}</h3>
                               <p className='text-sm font-normal text-green-600'>{item.category}</p>
                           </div>
                       </div>
