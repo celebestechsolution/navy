@@ -29,7 +29,7 @@ const menus: Menu[] = [
         links: [
             {
                 label: 'Daftar Izin Proses',
-                href: '/',
+                href: '/permits',
             },
             {
                 label: 'Jenis Daftar Izin',

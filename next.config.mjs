@@ -43,6 +43,11 @@ const nextConfig = {
                 source: '/general/innovations/jabat-erat',
                 permanent: true,
             },
+            {
+                destination: '/permits',
+                source: '/general/permits',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -87,6 +92,10 @@ const nextConfig = {
             {
                 source: '/innovations/jabat-erat',
                 destination: '/general/innovations/jabat-erat',
+            },
+            {
+                source: '/permits',
+                destination: '/general/permits',
             },
             // Guest
             {
