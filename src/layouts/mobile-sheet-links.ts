@@ -32,7 +32,7 @@ const menus: Menu[] = [
                 href: '/permits',
             },
             {
-                label: 'Jenis Daftar Izin',
+                label: 'Daftar Jenis Izin',
                 href: '/login',
             },
             {
