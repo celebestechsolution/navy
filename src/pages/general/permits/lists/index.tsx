@@ -1,11 +1,12 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
+import { PermitListsContent } from '@/features/general/permits/lists/permit-lists-content';
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
 const PermitListsPage: NextPageWithLayout = () => {
-    return <div>PermitListsPage</div>;
+    return <PermitListsContent />;
 };
 
 PermitListsPage.getLayout = function getLayout(page: React.ReactElement) {

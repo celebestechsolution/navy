@@ -22,7 +22,9 @@ const PermitsContent = () => {
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
-                                <BreadcrumbLink href='/'>Beranda</BreadcrumbLink>
+                                <BreadcrumbLink asChild>
+                                    <Link href='/'>Beranda</Link>
+                                </BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator />
                             <BreadcrumbItem>
