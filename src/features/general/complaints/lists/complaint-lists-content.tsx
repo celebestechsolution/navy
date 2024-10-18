@@ -26,7 +26,7 @@ const ComplaintListsContent = () => {
                             <BreadcrumbSeparator />
                             <BreadcrumbItem>
                                 <BreadcrumbLink asChild>
-                                    <Link href='/permits'>Perizinan</Link>
+                                    <Link href='/complaints'>Pengaduan</Link>
                                 </BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator />
