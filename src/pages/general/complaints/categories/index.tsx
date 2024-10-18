@@ -1,11 +1,13 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
+import { ComplaintCategoriesContent } from '@/features/general/complaints/categories/complaint-categories-content';
+
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
 const ComplaintCategoriesPage: NextPageWithLayout = () => {
-    return <div>Kategori Pengaduan & Dasar Hukum</div>;
+    return <ComplaintCategoriesContent />;
 };
 
 ComplaintCategoriesPage.getLayout = function getLayout(page: React.ReactElement) {
