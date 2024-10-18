@@ -71,7 +71,7 @@ const menus: Menu[] = [
         links: [
             {
                 label: 'Daftar Pengaduan',
-                href: '/',
+                href: '/complaints/lists',
             },
             {
                 label: 'Kategori Pengaduan & Dasar Hukum',
