@@ -5,11 +5,11 @@ import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
-const PermitTypes: NextPageWithLayout = () => {
+const PermitTypesPage: NextPageWithLayout = () => {
     return <PermitTypesContent />;
 };
 
-PermitTypes.getLayout = function getLayout(page: React.ReactElement) {
+PermitTypesPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
         <RootLayout title='Daftar Jenis Izin' className='bg-background'>
             <MobileNavigation />
@@ -18,4 +18,4 @@ PermitTypes.getLayout = function getLayout(page: React.ReactElement) {
     );
 };
 
-export default PermitTypes;
+export default PermitTypesPage;

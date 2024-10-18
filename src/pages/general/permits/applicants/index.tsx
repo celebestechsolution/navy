@@ -6,11 +6,11 @@ import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
-const PermitApplicants: NextPageWithLayout = () => {
+const PermitApplicantsPage: NextPageWithLayout = () => {
     return <PermitApplicantsContent />;
 };
 
-PermitApplicants.getLayout = function getLayout(page: React.ReactElement) {
+PermitApplicantsPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
         <RootLayout title='Jumlah Pemohon Izin' className='bg-background'>
             <MobileNavigation />
@@ -19,4 +19,4 @@ PermitApplicants.getLayout = function getLayout(page: React.ReactElement) {
     );
 };
 
-export default PermitApplicants;
+export default PermitApplicantsPage;
