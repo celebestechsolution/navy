@@ -41,7 +41,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Standar Pelayanan Perizinan',
-                href: '/dashboard',
+                href: '/permits/service-standards',
             },
         ],
     },
