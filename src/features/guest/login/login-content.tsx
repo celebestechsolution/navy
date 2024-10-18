@@ -1,6 +1,5 @@
 import { GoogleLogo } from '@/components/google-logo';
 import { AppShell } from '@/components/shells/app-shell';
-import { TablerIcon } from '@/components/tabler-icon';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -33,10 +32,9 @@ const LoginContent = () => {
                         </div>
                     </div>
 
-                    <Button variant='outline' asChild>
+                    <Button variant='link' asChild>
                         <Link href='/'>
-                            <TablerIcon name='IconHomeFilled' className='me-2 fill-primary stroke-0' />
-                            <span className='text-primary'>Kembali ke Beranda</span>
+                            <span className='font-semibold text-primary'>Kembali ke Beranda</span>
                         </Link>
                     </Button>
                 </div>

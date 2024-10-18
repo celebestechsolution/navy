@@ -5,11 +5,11 @@ import { LoginContent } from '@/features/guest/login/login-content';
 import { GuestNavigation } from '@/layouts/guest-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
-const Login: NextPageWithLayout = () => {
+const LoginPage: NextPageWithLayout = () => {
     return <LoginContent />;
 };
 
-Login.getLayout = function getLayout(page: React.ReactElement) {
+LoginPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
         <RootLayout title='login' className='bg-background'>
             <GuestNavigation />
@@ -18,4 +18,4 @@ Login.getLayout = function getLayout(page: React.ReactElement) {
     );
 };
 
-export default Login;
+export default LoginPage;
