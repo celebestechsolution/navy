@@ -15,7 +15,7 @@ const ComplaintListsContent = () => {
     return (
         <>
             <AppShell className='bg-background-secondary'>
-                <section id='permit-lists-breadcrumb'>
+                <section id='complaint-lists-breadcrumb'>
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
@@ -38,7 +38,7 @@ const ComplaintListsContent = () => {
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>
-                <section id='permit-lists-content' className='space-y-6'>
+                <section id='complaint-lists-content' className='space-y-6'>
                     <h1 className='text-lg font-bold text-primary'>Daftar Pengaduan</h1>
                     <div className='grid grid-cols-1 space-y-3 divide-y'>
                         {Array.from({ length: 5 }).map((_, i) => (
