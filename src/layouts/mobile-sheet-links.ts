@@ -75,7 +75,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Kategori Pengaduan & Dasar Hukum',
-                href: '/dashboard',
+                href: '/complaints/categories',
             },
             {
                 label: 'Buat Pengaduan Baru',
