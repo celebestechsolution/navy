@@ -36,8 +36,8 @@ const menus: Menu[] = [
                 href: '/permits/types',
             },
             {
-                label: 'Jumlah Permohonan Izin',
-                href: '/dashboard',
+                label: 'Jumlah Pemohon Izin',
+                href: '/permits/applicants',
             },
             {
                 label: 'Standar Pelayanan Perizinan',

@@ -53,6 +53,11 @@ const nextConfig = {
                 source: '/general/permits/types',
                 permanent: true,
             },
+            {
+                destination: '/permits/applicants',
+                source: '/general/permits/applicants',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -109,6 +114,10 @@ const nextConfig = {
             {
                 source: '/permits/types',
                 destination: '/general/permits/types',
+            },
+            {
+                source: '/permits/applicants',
+                destination: '/general/permits/applicants',
             },
             // Guest
             {
