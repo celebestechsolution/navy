@@ -63,6 +63,11 @@ const nextConfig = {
                 source: '/general/permits/service-standards',
                 permanent: true,
             },
+            {
+                destination: '/complaints',
+                source: '/general/complaints',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -127,6 +132,10 @@ const nextConfig = {
             {
                 source: '/permits/service-standards',
                 destination: '/general/permits/service-standards',
+            },
+            {
+                source: '/complaints',
+                destination: '/general/complaints',
             },
             // Guest
             {
