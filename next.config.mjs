@@ -83,6 +83,11 @@ const nextConfig = {
                 source: '/general/about',
                 permanent: true,
             },
+            {
+                destination: '/about/profile',
+                source: '/general/about/profile',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -163,6 +168,10 @@ const nextConfig = {
             {
                 source: '/about',
                 destination: '/general/about',
+            },
+            {
+                source: '/about/profile',
+                destination: '/general/about/profile',
             },
             // Guest
             {
