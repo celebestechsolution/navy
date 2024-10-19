@@ -93,6 +93,11 @@ const nextConfig = {
                 source: '/general/about/duties',
                 permanent: true,
             },
+            {
+                destination: '/about/awards',
+                source: '/general/about/awards',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -181,6 +186,10 @@ const nextConfig = {
             {
                 source: '/about/duties',
                 destination: '/general/about/duties',
+            },
+            {
+                source: '/about/awards',
+                destination: '/general/about/awards',
             },
             // Guest
             {
