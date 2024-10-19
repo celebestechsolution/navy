@@ -3,35 +3,28 @@ import Link from 'next/link';
 import { menus } from '@/layouts/mobile-sheet-links';
 
 import { AppShell } from '@/components/shells/app-shell';
+import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { TablerIcon } from '@/components/tabler-icon';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Tentang DPMPTSP',
+        type: 'page',
+    },
+];
 
 const AboutContent = () => {
     return (
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='about-breadcrumb'>
-                    <Breadcrumb>
-                        <BreadcrumbList>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/'>Beranda</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbPage>Tentang DPMPTSP</BreadcrumbPage>
-                            </BreadcrumbItem>
-                        </BreadcrumbList>
-                    </Breadcrumb>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>
