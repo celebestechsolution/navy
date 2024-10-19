@@ -87,6 +87,23 @@ const menus: Menu[] = [
             },
         ],
     },
+    {
+        label: 'Tentang DPMPTSP',
+        links: [
+            {
+                label: 'Profil DPMPTSP',
+                href: '/about/profile',
+            },
+            {
+                label: 'Tugas Pokok & Fungsi',
+                href: '/about/duties',
+            },
+            {
+                label: 'Penghargaan',
+                href: '/about/award',
+            },
+        ],
+    },
 ];
 
 export { menus, type Link, type Menu };
