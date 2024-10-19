@@ -100,7 +100,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Penghargaan',
-                href: '/about/award',
+                href: '/about/awards',
             },
         ],
     },

@@ -88,6 +88,11 @@ const nextConfig = {
                 source: '/general/about/profile',
                 permanent: true,
             },
+            {
+                destination: '/about/duties',
+                source: '/general/about/duties',
+                permanent: true,
+            },
             // Guest
             {
                 destination: '/login',
@@ -172,6 +177,10 @@ const nextConfig = {
             {
                 source: '/about/profile',
                 destination: '/general/about/profile',
+            },
+            {
+                source: '/about/duties',
+                destination: '/general/about/duties',
             },
             // Guest
             {
