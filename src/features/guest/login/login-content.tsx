@@ -1,22 +1,22 @@
+import Link from 'next/link';
+
 import { GoogleLogo } from '@/components/google-logo';
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 const LoginContent = () => {
     return (
         <main className='bg-background'>
             <AppShell className='py-6'>
                 <div className='flex flex-col space-y-6'>
-                    <div className='flex flex-col space-y-1.5'>
-                        <h1 className='text-lg font-bold leading-none tracking-tight text-primary'>
-                            Masuk atau Daftar Akun
-                        </h1>
-                        <p className='text-sm text-muted-foreground'>
+                    <Header>
+                        <Header.Title>Masuk atau Daftar Akun</Header.Title>
+                        <Header.SubTitle>
                             Gunakan layanan dibawah untuk masuk ke DPMPTSP Kabupaten Pinrang
-                        </p>
-                    </div>
+                        </Header.SubTitle>
+                    </Header>
 
                     <Button>
                         <GoogleLogo className='me-2 size-4' />

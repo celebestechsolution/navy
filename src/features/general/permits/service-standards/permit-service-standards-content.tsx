@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Link from 'next/link';
 
+import { Header } from '@/components/header';
 import { PdfLogo } from '@/components/pdf-logo';
 import { AppShell } from '@/components/shells/app-shell';
 import { TablerIcon } from '@/components/tabler-icon';
@@ -51,7 +52,9 @@ const PermitServiceStandardsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='permit-applicants-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Standar Pelayanan Perizinan</h1>
+                    <Header>
+                        <Header.Title>Standar Pelayanan Perizinan</Header.Title>
+                    </Header>
 
                     <div className='relative'>
                         <Input

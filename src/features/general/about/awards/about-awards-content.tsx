@@ -1,3 +1,4 @@
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -32,7 +33,9 @@ const AboutAwardsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='about-duties-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Penghargaan</h1>
+                    <Header>
+                        <Header.Title>Penghargaan</Header.Title>
+                    </Header>
                     <Accordion type='single' collapsible className='w-full space-y-4'>
                         {awards.map((item, i) => (
                             <Card key={i} className='px-2.5 shadow-none'>

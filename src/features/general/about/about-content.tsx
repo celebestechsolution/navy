@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { menus } from '@/layouts/mobile-sheet-links';
 
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { TablerIcon } from '@/components/tabler-icon';
@@ -29,7 +30,9 @@ const AboutContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='about-content'>
-                    <h1 className='text-lg font-bold text-primary'>Tentang DPMPTSP</h1>
+                    <Header>
+                        <Header.Title>Tentang DPMPTSP</Header.Title>
+                    </Header>
                     <div className='mt-6 flex flex-col space-y-4'>
                         {menus[4]['links'].map((item, i) => (
                             <Link key={`${i}${item.label}`} href={item.href} className='group'>

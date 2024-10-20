@@ -1,5 +1,6 @@
 import { AppShell } from '@/components/shells/app-shell';
 
+import { Header } from '@/components/header';
 import { PermitListsBreadcrumb } from './permit-lists-breadcrumb';
 import { PermitListsItem } from './permit-lists-item';
 
@@ -13,7 +14,9 @@ const PermitListsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='permit-lists-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Daftar Izin Proses</h1>
+                    <Header>
+                        <Header.Title>Daftar Izin Proses</Header.Title>
+                    </Header>
                     <PermitListsItem />
                 </section>
             </AppShell>

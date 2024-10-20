@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { menus } from '@/layouts/mobile-sheet-links';
 
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { TablerIcon } from '@/components/tabler-icon';
 import {
@@ -36,7 +37,9 @@ const ComplaintsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='complaints-content'>
-                    <h1 className='text-lg font-bold text-primary'>Pengaduan</h1>
+                    <Header>
+                        <Header.Title>Pengaduan</Header.Title>
+                    </Header>
                     <div className='mt-6 flex flex-col space-y-4'>
                         {menus[3]['links'].map((item, i) => (
                             <Link key={`${i}${item.label}`} href={item.href} className='group'>

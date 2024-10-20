@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { NewsBlock } from '@/components/blocks/news-block';
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { type BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { NewsSkeleton } from '@/components/skeletons/news-skeleton';
@@ -36,7 +37,9 @@ const LatestNewsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='permit-lists-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Berita Terkini</h1>
+                    <Header>
+                        <Header.Title>Berita Terkini</Header.Title>
+                    </Header>
 
                     <div className='relative'>
                         <Input type='text' className='peer ps-9' placeholder='Cari Berita' />

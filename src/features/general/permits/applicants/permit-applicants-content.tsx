@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { applicants } from './permit-applicants-data';
 
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import {
     Breadcrumb,
@@ -42,7 +43,9 @@ const PermitApplicantsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='permit-applicants-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Jumlah Pemohon Izin</h1>
+                    <Header>
+                        <Header.Title>Jumlah Pemohon Izin</Header.Title>
+                    </Header>
                     <div className='grid grid-cols-2 gap-2'>
                         {applicants.map((item, i) => (
                             <Card

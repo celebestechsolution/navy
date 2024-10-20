@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import {
     Breadcrumb,
@@ -39,7 +40,9 @@ const ComplaintListsContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='complaint-lists-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Daftar Pengaduan</h1>
+                    <Header>
+                        <Header.Title>Daftar Pengaduan</Header.Title>
+                    </Header>
                     <div className='grid grid-cols-1 space-y-3 divide-y'>
                         {Array.from({ length: 5 }).map((_, i) => (
                             <div key={i} className={cn('flex items-center gap-4', i !== 0 && 'pt-3')}>

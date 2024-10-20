@@ -1,3 +1,4 @@
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 
@@ -28,7 +29,9 @@ const AboutDutiesContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='about-duties-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Tugas Pokok & Fungsi</h1>
+                    <Header>
+                        <Header.Title>Tugas Pokok & Fungsi</Header.Title>
+                    </Header>
                     <article className='text-sm'>
                         <p className='leading-7 [&:not(:first-child)]:mt-6'>
                             Berdasarkan Peraturan Bupati Pinrang Nomor 48 Tahun 2016 tentang Kedudukan, Susunan

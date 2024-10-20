@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Link from 'next/link';
 
+import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { TablerIcon } from '@/components/tabler-icon';
 import {
@@ -54,7 +55,9 @@ const PermitTypesContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='permit-lists-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Daftar Jenis Izin</h1>
+                    <Header>
+                        <Header.Title>Daftar Jenis Izin</Header.Title>
+                    </Header>
 
                     <div className='relative'>
                         <Input

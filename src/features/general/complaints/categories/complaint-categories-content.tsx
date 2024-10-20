@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { categories } from './complaint-categories-data';
 
+import { Header } from '@/components/header';
 import { PdfLogo } from '@/components/pdf-logo';
 import { AppShell } from '@/components/shells/app-shell';
 import {
@@ -42,7 +43,9 @@ const ComplaintCategoriesContent = () => {
             </AppShell>
             <AppShell className='border-t border-border'>
                 <section id='complaint-categories-content' className='space-y-6'>
-                    <h1 className='text-lg font-bold text-primary'>Kategori Pengaduan & Dasar Hukum</h1>
+                    <Header>
+                        <Header.Title>Kategori Pengaduan</Header.Title>
+                    </Header>
                     <div className='flex flex-col space-y-4'>
                         {categories.map((category, i) => (
                             <Card key={i} className='p-4 shadow-none'>
