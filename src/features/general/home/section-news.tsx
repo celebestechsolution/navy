@@ -17,7 +17,7 @@ const SectionNews = () => {
         <section id='latests-news' className='space-y-6 py-10'>
             <div className='flex items-center justify-between'>
                 <h5 className='text-base font-semibold text-primary'>Berita Terkini</h5>
-                <Link href='/' className='text-sm font-normal text-muted-foreground underline'>
+                <Link href='/latest-news' className='text-sm font-normal text-muted-foreground underline'>
                     Lihat Semua
                 </Link>
             </div>
