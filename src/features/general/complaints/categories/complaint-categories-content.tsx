@@ -1,44 +1,38 @@
 import Link from 'next/link';
 
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
 import { categories } from './complaint-categories-data';
 
 import { Header } from '@/components/header';
 import { PdfLogo } from '@/components/pdf-logo';
 import { AppShell } from '@/components/shells/app-shell';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Pengaduan',
+        type: 'link',
+        href: '/complaints',
+    },
+    {
+        label: 'Kategori Pengaduan & Dasar Hukum',
+        type: 'page',
+    },
+];
 
 const ComplaintCategoriesContent = () => {
     return (
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='complaint-categories-breadcrumb' className=''>
-                    <Breadcrumb>
-                        <BreadcrumbList className='flex-nowrap overflow-hidden truncate'>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/'>Beranda</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/complaints'>Pengaduan</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbPage>Kategori Pengaduan & Dasar Hukum</BreadcrumbPage>
-                            </BreadcrumbItem>
-                        </BreadcrumbList>
-                    </Breadcrumb>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>

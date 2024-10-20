@@ -1,44 +1,36 @@
-import Link from 'next/link';
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
 import { cn } from '@/lib/utils';
 import { applicants } from './permit-applicants-data';
 
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Perizinan',
+        type: 'link',
+        href: '/permits',
+    },
+    {
+        label: 'Jumlah Pemohon Izin',
+        type: 'page',
+    },
+];
 
 const PermitApplicantsContent = () => {
     return (
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='permit-applicants-breadcrumb'>
-                    <Breadcrumb>
-                        <BreadcrumbList>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/'>Beranda</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/permits'>Perizinan</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbPage>Jumlah Pemohon Izin</BreadcrumbPage>
-                            </BreadcrumbItem>
-                        </BreadcrumbList>
-                    </Breadcrumb>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>

@@ -1,5 +1,7 @@
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
 import { AppShell } from '@/components/shells/app-shell';
-import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const breadcrumbItems: BreadcrumbItem[] = [

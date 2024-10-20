@@ -1,13 +1,16 @@
 import * as React from 'react';
 
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
+import { newsData } from './latest-news-data';
+
 import { NewsBlock } from '@/components/blocks/news-block';
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
-import { type BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { NewsSkeleton } from '@/components/skeletons/news-skeleton';
 import { TablerIcon } from '@/components/tabler-icon';
 import { Input } from '@/components/ui/input';
-import { newsData } from './latest-news-data';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {

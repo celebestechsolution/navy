@@ -1,10 +1,12 @@
 import Link from 'next/link';
 
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
 import { menus } from '@/layouts/mobile-sheet-links';
 
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
-import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { TablerIcon } from '@/components/tabler-icon';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 

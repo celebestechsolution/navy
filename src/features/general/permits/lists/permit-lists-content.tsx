@@ -1,15 +1,34 @@
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
 import { AppShell } from '@/components/shells/app-shell';
 
 import { Header } from '@/components/header';
-import { PermitListsBreadcrumb } from './permit-lists-breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { PermitListsItem } from './permit-lists-item';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Perizinan',
+        type: 'link',
+        href: '/permits',
+    },
+    {
+        label: 'Daftar Izin Proses',
+        type: 'page',
+    },
+];
 
 const PermitListsContent = () => {
     return (
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='permit-lists-breadcrumb'>
-                    <PermitListsBreadcrumb />
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>

@@ -1,41 +1,34 @@
-import Link from 'next/link';
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
+import { cn } from '@/lib/utils';
 
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
-import { cn } from '@/lib/utils';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Pengaduan',
+        type: 'link',
+        href: '/complaints',
+    },
+    {
+        label: 'Daftar Pengaduan',
+        type: 'page',
+    },
+];
 
 const ComplaintListsContent = () => {
     return (
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='complaint-lists-breadcrumb'>
-                    <Breadcrumb>
-                        <BreadcrumbList>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/'>Beranda</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/complaints'>Pengaduan</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbPage>Daftar Pengaduan</BreadcrumbPage>
-                            </BreadcrumbItem>
-                        </BreadcrumbList>
-                    </Breadcrumb>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>

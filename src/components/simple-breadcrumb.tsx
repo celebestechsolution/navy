@@ -2,6 +2,10 @@ import * as React from 'react';
 
 import Link from 'next/link';
 
+import { cn } from '@/lib/utils';
+
+import type { BreadcrumbItem as BreadcrumbItemType } from '@/types/app/breadcrumb-item';
+
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -10,23 +14,9 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { cn } from '@/lib/utils';
-
-type BreadcrumbPage = {
-    type: 'page';
-};
-
-type BreadcrumbLink = {
-    type: 'link';
-    href: string;
-};
-
-export type BreadcrumbItem = {
-    label: string;
-} & (BreadcrumbLink | BreadcrumbPage);
 
 type SimpleBreadcrumbProps = {
-    items: BreadcrumbItem[];
+    items: BreadcrumbItemType[];
     className?: string;
 };
 

@@ -1,10 +1,13 @@
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
+import { awards } from './about-awards-data';
+
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
-import { BreadcrumbItem, SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { awards } from './about-awards-data';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {

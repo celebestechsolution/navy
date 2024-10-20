@@ -1,22 +1,33 @@
 import * as React from 'react';
 
-import Link from 'next/link';
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
+import { serviceStandards } from './permit-service-standards-data';
 
 import { Header } from '@/components/header';
 import { PdfLogo } from '@/components/pdf-logo';
 import { AppShell } from '@/components/shells/app-shell';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { TablerIcon } from '@/components/tabler-icon';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { serviceStandards } from './permit-service-standards-data';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Perizinan',
+        type: 'link',
+        href: '/permits',
+    },
+    {
+        label: 'Standar Pelayanan Perizinan',
+        type: 'page',
+    },
+];
 
 const PermitServiceStandardsContent = () => {
     const [query, setQuery] = React.useState<string>('');
@@ -29,25 +40,7 @@ const PermitServiceStandardsContent = () => {
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='permit-applicants-breadcrumb'>
-                    <Breadcrumb>
-                        <BreadcrumbList>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/'>Beranda</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/permits'>Perizinan</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbPage>Standar Pelayanan Perizinan</BreadcrumbPage>
-                            </BreadcrumbItem>
-                        </BreadcrumbList>
-                    </Breadcrumb>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>

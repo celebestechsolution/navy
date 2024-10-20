@@ -1,21 +1,32 @@
 import * as React from 'react';
 
-import Link from 'next/link';
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
+
+import { permitTypes } from './permit-types-data';
 
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { TablerIcon } from '@/components/tabler-icon';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { permitTypes } from './permit-types-data';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Perizinan',
+        type: 'link',
+        href: '/permits',
+    },
+    {
+        label: 'Daftar Jenis Izin',
+        type: 'page',
+    },
+];
 
 const PermitTypesContent = () => {
     const [query, setQuery] = React.useState<string>('');
@@ -32,25 +43,7 @@ const PermitTypesContent = () => {
         <>
             <AppShell className='bg-background-secondary'>
                 <section id='permit-lists-breadcrumb'>
-                    <Breadcrumb>
-                        <BreadcrumbList>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/'>Beranda</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbLink asChild>
-                                    <Link href='/permits'>Perizinan</Link>
-                                </BreadcrumbLink>
-                            </BreadcrumbItem>
-                            <BreadcrumbSeparator />
-                            <BreadcrumbItem>
-                                <BreadcrumbPage>Daftar Jenis Izin</BreadcrumbPage>
-                            </BreadcrumbItem>
-                        </BreadcrumbList>
-                    </Breadcrumb>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
             <AppShell className='border-t border-border'>
