@@ -20,15 +20,27 @@ const NewsBlockImage = ({ className, ...props }: React.ImgHTMLAttributes<HTMLIma
 };
 
 const NewsBlockBody = ({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-    return <div className={cn('flex flex-col gap-1.5', className)}>{children}</div>;
+    return (
+        <div className={cn('flex flex-col gap-1.5', className)} {...props}>
+            {children}
+        </div>
+    );
 };
 
 const NewsBlockTitle = ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    return <h3 className={cn('line-clamp-2 text-base font-semibold text-primary', className)}>{children}</h3>;
+    return (
+        <h3 className={cn('line-clamp-2 text-base font-semibold text-primary', className)} {...props}>
+            {children}
+        </h3>
+    );
 };
 
 const NewsBlockSubTitle = ({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
-    return <p className={cn('text-sm font-normal text-green-600', className)}>{children}</p>;
+    return (
+        <p className={cn('text-sm font-normal text-green-600', className)} {...props}>
+            {children}
+        </p>
+    );
 };
 
 NewsBlock.Image = NewsBlockImage;
