@@ -19,8 +19,8 @@ const menus: Menu[] = [
                 href: '/',
             },
             {
-                label: 'Dashboard',
-                href: '/dashboard',
+                label: 'Berita Terkini',
+                href: '/latest-news',
             },
         ],
     },

@@ -14,6 +14,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                destination: '/latest-news',
+                source: '/general/latest-news',
+                permanent: true,
+            },
+            {
                 destination: '/licensing',
                 source: '/general/licensing',
                 permanent: true,
@@ -118,6 +123,10 @@ const nextConfig = {
             {
                 source: '/',
                 destination: '/general/home',
+            },
+            {
+                source: '/latest-news',
+                destination: '/general/latest-news',
             },
             {
                 source: '/licensing',
