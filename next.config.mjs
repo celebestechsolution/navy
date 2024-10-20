@@ -19,11 +19,6 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                destination: '/licensing',
-                source: '/general/licensing',
-                permanent: true,
-            },
-            {
                 destination: '/innovations',
                 source: '/general/innovations',
                 permanent: true,
@@ -127,10 +122,6 @@ const nextConfig = {
             {
                 source: '/latest-news',
                 destination: '/general/latest-news',
-            },
-            {
-                source: '/licensing',
-                destination: '/general/licensing',
             },
             {
                 source: '/innovations',
