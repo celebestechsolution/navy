@@ -79,6 +79,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                destination: '/complaints/create',
+                source: '/general/complaints/create',
+                permanent: true,
+            },
+            {
                 destination: '/about',
                 source: '/general/about',
                 permanent: true,
@@ -174,6 +179,10 @@ const nextConfig = {
             {
                 source: '/complaints/categories',
                 destination: '/general/complaints/categories',
+            },
+            {
+                source: '/complaints/create',
+                destination: '/general/complaints/create',
             },
             {
                 source: '/about',

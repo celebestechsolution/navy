@@ -79,7 +79,7 @@ const menus: Menu[] = [
             },
             {
                 label: 'Buat Pengaduan Baru',
-                href: '/dashboard',
+                href: '/complaints/create',
             },
             {
                 label: 'Pengaduan Saya',
