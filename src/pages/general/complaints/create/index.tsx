@@ -1,11 +1,13 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
+import { CreateComplaintContent } from '@/features/general/complaints/create/create-complaint-content';
+
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
 import { RootLayout } from '@/layouts/root-layout';
 
 const CreateComplaintPage: NextPageWithLayout = () => {
-    return <div>CreateComplaintPage</div>;
+    return <CreateComplaintContent />;
 };
 
 CreateComplaintPage.getLayout = function getLayout(page: React.ReactElement) {
