@@ -3,7 +3,7 @@ interface AuthLayoutProps {
 }
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
-    return <main className='mt-[4rem] min-h-[1000rem]'>{children}</main>;
+    return <main className='mt-[4rem]'>{children}</main>;
 };
 
 export { AuthLayout };
