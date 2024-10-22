@@ -3,6 +3,7 @@ import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+import { CreateComplaintForm } from './create-complaint-form';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {
@@ -37,6 +38,7 @@ const CreateComplaintContent = () => {
                             Lengkapi data diri dan pengaduan anda dengan benar serta dapat di pertanggung jawabkan
                         </Header.SubTitle>
                     </Header>
+                    <CreateComplaintForm />
                 </section>
             </AppShell>
         </>

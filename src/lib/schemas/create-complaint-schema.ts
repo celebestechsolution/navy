@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { imageValidation } from '../utils';
 
 const createComplaintSchema = z.object({
-    fullName: z
+    full_name: z
         .string({ errorMap: () => ({ message: 'Nama Lengkap tidak boleh kosong.' }) })
         .min(1, { message: 'Nama Lengkap tidak boleh kosong.' })
         .min(3, { message: 'Nama Lengkap harus lebih dari 3 karakter.' })
@@ -9,7 +10,7 @@ const createComplaintSchema = z.object({
     address: z
         .string({ errorMap: () => ({ message: 'Alamat tidak boleh kosong.' }) })
         .min(1, { message: 'Alamat tidak boleh kosong.' }),
-    phoneNumber: z
+    phone_number: z
         .string({ errorMap: () => ({ message: 'Nomor Telepon tidak boleh kosong.' }) })
         .min(1, { message: 'Nomor Telepon tidak boleh kosong.' })
         .min(11, { message: 'Nomor Telepon harus lebih dari 11 digit.' })
@@ -17,6 +18,11 @@ const createComplaintSchema = z.object({
     category: z
         .string({ errorMap: () => ({ message: 'Kategori Pengaduan tidak boleh kosong.' }) })
         .min(1, { message: 'Kategori Pengaduan tidak boleh kosong.' }),
+    image: z
+        .instanceof(File, { message: 'Foto Pengaduan tidak boleh kosong.' })
+        .refine((file) => imageValidation(file), {
+            message: 'Foto Pengaduan yang anda unggah tidak menggunakan format yang valid.',
+        }),
     description: z
         .string({ errorMap: () => ({ message: 'Deskripsi Pengaduan tidak boleh kosong.' }) })
         .min(1, { message: 'Deskripsi Pengaduan tidak boleh kosong.' }),
