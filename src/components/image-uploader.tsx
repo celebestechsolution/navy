@@ -13,6 +13,7 @@ interface ImageUploaderProps {
 
 export const ImageUploader = ({ onFileChange, model }: ImageUploaderProps) => {
     const [previewImage, setPreviewImage] = React.useState<string | null>(model as string);
+    const fileInputRef = React.useRef<HTMLInputElement | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files ? event.target.files[0] : null;
@@ -25,6 +26,14 @@ export const ImageUploader = ({ onFileChange, model }: ImageUploaderProps) => {
             reader.readAsDataURL(file);
         } else {
             setPreviewImage(null); // Reset preview if no file is selected
+        }
+    };
+
+    const handleDeleteImage = () => {
+        setPreviewImage(null);
+        onFileChange(null); // Notify parent component about image removal
+        if (fileInputRef.current) {
+            fileInputRef.current.value = ''; // Reset the file input field
         }
     };
 
@@ -46,7 +55,7 @@ export const ImageUploader = ({ onFileChange, model }: ImageUploaderProps) => {
                         size='icon'
                         variant='ghost'
                         type='button'
-                        onClick={() => setPreviewImage(null)}>
+                        onClick={() => handleDeleteImage()}>
                         <TablerIcon name='IconTrash' />
                     </Button>
                 </div>
