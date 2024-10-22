@@ -18,7 +18,7 @@ const RootLayout = ({ children, title, className }: RootLayoutProps) => {
                 <title>{title ? `${title} / ${appName}` : `${appName}`}</title>
             </Head>
 
-            <div className={cn('relative flex min-h-dvh flex-col bg-background-secondary', className)}>{children}</div>
+            <div className={cn('relative min-h-dvh bg-background-secondary', className)}>{children}</div>
 
             <Toaster />
         </>
