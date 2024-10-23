@@ -1,10 +1,15 @@
 import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import { cn } from '@/lib/utils';
+import { useFetchComplaintLists } from '@/api/queries/fetch-complaint-lists';
 
 import { Header } from '@/components/header';
+import { PageVersion } from '@/components/page-version';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+
+import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
+import { ComplaintListsBlock } from './complaint-lists-block';
+import { ComplaintListsSkeleton } from './complaint-lists-skeleton';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {
@@ -24,6 +29,8 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 
 const ComplaintListsContent = () => {
+    const { data: lists, status } = useFetchComplaintLists();
+
     return (
         <>
             <AppShell className='bg-background-secondary'>
@@ -31,38 +38,23 @@ const ComplaintListsContent = () => {
                     <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
-            <AppShell className='border-t border-border'>
+            <AppShell className='relative border-t border-border'>
                 <section id='complaint-lists-content' className='space-y-6'>
                     <Header>
                         <Header.Title>Daftar Pengaduan</Header.Title>
                     </Header>
+
                     <div className='grid grid-cols-1 space-y-3 divide-y'>
-                        {Array.from({ length: 5 }).map((_, i) => (
-                            <div key={i} className={cn('flex items-center gap-4', i !== 0 && 'pt-3')}>
-                                <img
-                                    className='aspect-square size-[5.438rem] rounded-2xl border object-cover object-center'
-                                    width={100}
-                                    height={100}
-                                    src='/images/news-1.png'
-                                    alt='Foto Pengaduan 1'
-                                />
-                                <div className='flex w-full flex-col space-y-2'>
-                                    <div className='flex items-center justify-between text-sm text-muted-foreground'>
-                                        <span>23 September 2024</span>
-                                        <span>10.09</span>
-                                    </div>
-                                    <div>
-                                        <h3 className='font-semibold text-primary'>Pengaduan Perizinan</h3>
-                                    </div>
-                                    <div className='flex items-center justify-between text-sm text-muted-foreground'>
-                                        <span>Status: </span>
-                                        <span className='font-semibold text-green-600'>Diterima</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                        {status === 'pending' && <ComplaintListsSkeleton />}
+
+                        {status === 'success' &&
+                            lists.map((item, index) => <ComplaintListsBlock key={item.id} item={item} index={index} />)}
+
+                        {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
+
+                <PageVersion label={2} />
             </AppShell>
         </>
     );
