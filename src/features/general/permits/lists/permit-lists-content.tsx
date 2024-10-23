@@ -5,6 +5,7 @@ import { useFetchPermitLists } from '@/api/queries/fetch-permit-lists';
 import { FetchEmptyBlock } from '@/components/blocks/fetch-empty-block';
 import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
+import { PageVersion } from '@/components/page-version';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { Accordion } from '@/components/ui/accordion';
@@ -39,7 +40,7 @@ const PermitListsContent = () => {
                     <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
-            <AppShell className='border-t border-border'>
+            <AppShell className='relative border-t border-border'>
                 <section id='permit-lists-content' className='space-y-6'>
                     <Header>
                         <Header.Title>Daftar Izin Proses</Header.Title>
@@ -59,6 +60,7 @@ const PermitListsContent = () => {
 
                     {status === 'error' && <FetchErrorBlock />}
                 </section>
+                <PageVersion label={2} />
             </AppShell>
         </>
     );
