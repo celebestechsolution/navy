@@ -1,12 +1,14 @@
 import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import { cn } from '@/lib/utils';
-import { applicants } from './permit-applicants-data';
+import { useFetchPermitApplicants } from '@/api/queries/fetch-permit-applicants';
 
+import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { PermitApplicantsBlock } from './permit-applicants-block';
+import { PermitApplicantsSkeleton } from './permit-applicants-skeleton';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {
@@ -26,6 +28,8 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 
 const PermitApplicantsContent = () => {
+    const { data: applicants, status } = useFetchPermitApplicants();
+
     return (
         <>
             <AppShell className='bg-background-secondary'>
@@ -38,22 +42,14 @@ const PermitApplicantsContent = () => {
                     <Header>
                         <Header.Title>Jumlah Pemohon Izin</Header.Title>
                     </Header>
+
                     <div className='grid grid-cols-2 gap-2'>
-                        {applicants.map((item, i) => (
-                            <Card
-                                key={i + item.value}
-                                className={cn('space-y-2 p-4 shadow-none', i === 0 && 'col-span-full')}>
-                                <CardHeader className='p-0'>
-                                    <CardTitle className='text-sm font-medium text-primary'>{item.label}</CardTitle>
-                                </CardHeader>
-                                <CardContent className='p-0'>
-                                    <div className='text-2xl font-bold text-primary'>{item.value}</div>
-                                </CardContent>
-                                <CardFooter className='p-0'>
-                                    <p className='text-sm text-green-600'>Pemohon</p>
-                                </CardFooter>
-                            </Card>
-                        ))}
+                        {status === 'pending' && <PermitApplicantsSkeleton />}
+
+                        {status === 'success' &&
+                            applicants.map((item, i) => <PermitApplicantsBlock key={item.id} index={i} item={item} />)}
+
+                        {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
             </AppShell>

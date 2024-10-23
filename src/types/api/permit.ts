@@ -14,3 +14,9 @@ export type PermitType = {
     code: string;
     name: string;
 };
+
+export type PermitApplicant = {
+    id: number;
+    value: number;
+    label: string;
+};
