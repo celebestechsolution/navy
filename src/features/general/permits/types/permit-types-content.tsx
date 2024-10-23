@@ -1,15 +1,15 @@
-import * as React from 'react';
-
 import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import { permitTypes } from './permit-types-data';
+import { useFetchPermitTypes } from '@/api/queries/fetch-permit-types';
 
+import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 import { TablerIcon } from '@/components/tabler-icon';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { PermitTypesSkeleton } from './permit-types-skeleton';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {
@@ -29,15 +29,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 
 const PermitTypesContent = () => {
-    const [query, setQuery] = React.useState<string>('');
-
-    const filteredData = query
-        ? permitTypes.filter(
-              (item) =>
-                  item.label.toLowerCase().includes(query.toLocaleLowerCase()) ||
-                  item.description.toLowerCase().includes(query.toLowerCase()),
-          )
-        : permitTypes;
+    const { data: types, status } = useFetchPermitTypes();
 
     return (
         <>
@@ -53,32 +45,24 @@ const PermitTypesContent = () => {
                     </Header>
 
                     <div className='relative'>
-                        <Input
-                            type='text'
-                            className='peer ps-9'
-                            onChange={(e) => setQuery(e.target.value)}
-                            placeholder='Cari Jenis Izin'
-                        />
+                        <Input type='text' className='peer ps-9' placeholder='Cari Jenis Izin' />
                         <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 text-muted-foreground/80 peer-disabled:opacity-50'>
                             <TablerIcon name='IconSearch' />
                         </div>
                     </div>
 
                     <div className='space-y-4'>
-                        {filteredData.length > 0 ? (
-                            filteredData.map((item, i) => (
-                                <Card key={`${i}/${item.label}`} className='shadow-none group-hover:bg-accent/75'>
-                                    <CardHeader className='p-4'>
-                                        <CardTitle className='font-bold text-primary'>{item.label}</CardTitle>
-                                        <CardDescription>{item.description}</CardDescription>
-                                    </CardHeader>
+                        {status === 'pending' && <PermitTypesSkeleton />}
+                        {status === 'success' &&
+                            types.map((item) => (
+                                <Card key={item.id + '-' + item.code} className='shadow-none'>
+                                    <CardContent className='flex flex-col space-y-1.5 p-4'>
+                                        <h3 className='font-bold text-primary'>{item.code}</h3>
+                                        <p className='text-sm text-muted-foreground'>{item.name}</p>
+                                    </CardContent>
                                 </Card>
-                            ))
-                        ) : (
-                            <h5 className='w-full text-center text-lg text-destructive'>
-                                Jenis Izin tidak dapat ditemukan
-                            </h5>
-                        )}
+                            ))}
+                        {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
             </AppShell>

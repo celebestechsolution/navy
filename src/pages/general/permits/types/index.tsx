@@ -1,6 +1,7 @@
 import type { NextPageWithLayout } from '@/types/app/next-layout';
 
 import { PermitTypesContent } from '@/features/general/permits/types/permit-types-content';
+
 import { DetectDeviceLayout } from '@/layouts/detect-device-layout';
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';

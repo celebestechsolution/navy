@@ -8,3 +8,9 @@ export type PermitList = {
     permitStart: string;
     permitEndEst: string;
 };
+
+export type PermitType = {
+    id: string;
+    code: string;
+    name: string;
+};
