@@ -3,8 +3,8 @@ export type ComplaintList = {
     image: string;
     category: string;
     description: string;
-    response: any;
-    respondent: any;
+    response?: string;
+    respondent?: string;
     status: string;
     created_at: string;
 };
