@@ -2,13 +2,14 @@ import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
 import { useFetchPermitTypes } from '@/api/queries/fetch-permit-types';
 
+import { FetchEmptyBlock } from '@/components/blocks/fetch-empty-block';
 import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
-import { TablerIcon } from '@/components/tabler-icon';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+
+import { PermitTypesBlock } from './permit-types-block';
+import { PermitTypesFilters } from './permit-types-filters';
 import { PermitTypesSkeleton } from './permit-types-skeleton';
 
 const breadcrumbItems: BreadcrumbItem[] = [
@@ -44,24 +45,17 @@ const PermitTypesContent = () => {
                         <Header.Title>Daftar Jenis Izin</Header.Title>
                     </Header>
 
-                    <div className='relative'>
-                        <Input type='text' className='peer ps-9' placeholder='Cari Jenis Izin' />
-                        <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 text-muted-foreground/80 peer-disabled:opacity-50'>
-                            <TablerIcon name='IconSearch' />
-                        </div>
-                    </div>
+                    <PermitTypesFilters />
 
                     <div className='space-y-4'>
                         {status === 'pending' && <PermitTypesSkeleton />}
-                        {status === 'success' &&
-                            types.map((item) => (
-                                <Card key={item.id + '-' + item.code} className='shadow-none'>
-                                    <CardContent className='flex flex-col space-y-1.5 p-4'>
-                                        <h3 className='font-bold text-primary'>{item.code}</h3>
-                                        <p className='text-sm text-muted-foreground'>{item.name}</p>
-                                    </CardContent>
-                                </Card>
-                            ))}
+
+                        {status === 'success' && types.length > 0 ? (
+                            types.map((item) => <PermitTypesBlock key={item.id + '-' + item.code} item={item} />)
+                        ) : (
+                            <FetchEmptyBlock />
+                        )}
+
                         {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
