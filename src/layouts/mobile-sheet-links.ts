@@ -79,18 +79,22 @@ const menus: Menu[] = [
             {
                 label: 'Daftar Pengaduan',
                 href: '/complaints/lists',
+                icon: 'IconClipboardText',
             },
             {
                 label: 'Kategori Pengaduan & Dasar Hukum',
                 href: '/complaints/categories',
+                icon: 'IconFileText',
             },
             {
                 label: 'Buat Pengaduan Baru',
                 href: '/complaints/create',
+                icon: 'IconClipboardPlus',
             },
             {
                 label: 'Pengaduan Saya',
                 href: '/dashboard',
+                icon: 'IconFileReport',
             },
         ],
     },
