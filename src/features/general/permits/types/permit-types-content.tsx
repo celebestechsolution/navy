@@ -5,6 +5,7 @@ import { useFetchPermitTypes } from '@/api/queries/fetch-permit-types';
 import { FetchEmptyBlock } from '@/components/blocks/fetch-empty-block';
 import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
+import { PageVersion } from '@/components/page-version';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 
@@ -39,7 +40,7 @@ const PermitTypesContent = () => {
                     <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
-            <AppShell className='border-t border-border'>
+            <AppShell className='relative border-t border-border'>
                 <section id='permit-lists-content' className='space-y-6'>
                     <Header>
                         <Header.Title>Daftar Jenis Izin</Header.Title>
@@ -59,6 +60,8 @@ const PermitTypesContent = () => {
                         {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
+
+                <PageVersion label={2} />
             </AppShell>
         </>
     );
