@@ -4,6 +4,7 @@ import { useFetchPermitApplicants } from '@/api/queries/fetch-permit-applicants'
 
 import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
+import { PageVersion } from '@/components/page-version';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
 
@@ -37,7 +38,7 @@ const PermitApplicantsContent = () => {
                     <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
-            <AppShell className='border-t border-border'>
+            <AppShell className='relative border-t border-border'>
                 <section id='permit-applicants-content' className='space-y-6'>
                     <Header>
                         <Header.Title>Jumlah Pemohon Izin</Header.Title>
@@ -52,6 +53,8 @@ const PermitApplicantsContent = () => {
                         {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
+
+                <PageVersion label={2} />
             </AppShell>
         </>
     );
