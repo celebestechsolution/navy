@@ -1,14 +1,15 @@
-import Link from 'next/link';
-
 import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import { categories } from './complaint-categories-data';
+import { useFetchComplaintCategories } from '@/api/queries/fetch-complaint-categories';
 
+import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
-import { PdfLogo } from '@/components/pdf-logo';
 import { AppShell } from '@/components/shells/app-shell';
 import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { PageVersion } from '@/components/page-version';
+import { ComplaintCategoriesBlock } from './complaint-categories-block';
+import { ComplaintCategoriesSkeleton } from './complaint-categories-skeleton';
 
 const breadcrumbItems: BreadcrumbItem[] = [
     {
@@ -28,6 +29,8 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 
 const ComplaintCategoriesContent = () => {
+    const { data: categories, status } = useFetchComplaintCategories();
+
     return (
         <>
             <AppShell className='bg-background-secondary'>
@@ -35,30 +38,22 @@ const ComplaintCategoriesContent = () => {
                     <SimpleBreadcrumb items={breadcrumbItems} />
                 </section>
             </AppShell>
-            <AppShell className='border-t border-border'>
+            <AppShell className='relative border-t border-border'>
                 <section id='complaint-categories-content' className='space-y-6'>
                     <Header>
                         <Header.Title>Kategori Pengaduan</Header.Title>
                     </Header>
                     <div className='flex flex-col space-y-4'>
-                        {categories.map((category, i) => (
-                            <Card key={i} className='p-4 shadow-none'>
-                                <CardHeader className='p-0'>
-                                    <CardTitle className='text-primary'>{category.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className='mb-4 mt-2 p-0'>
-                                    <p className='text-sm text-muted-foreground'>{category.description}</p>
-                                </CardContent>
-                                <CardFooter className='gap-2 p-0'>
-                                    <PdfLogo className='size-5' />
-                                    <Link href='/' className='text-sm font-medium text-primary'>
-                                        Download Dasar Hukum
-                                    </Link>
-                                </CardFooter>
-                            </Card>
-                        ))}
+                        {status === 'pending' && <ComplaintCategoriesSkeleton />}
+
+                        {status === 'success' &&
+                            categories.map((item) => <ComplaintCategoriesBlock key={item.id} item={item} />)}
+
+                        {status === 'error' && <FetchErrorBlock />}
                     </div>
                 </section>
+
+                <PageVersion label={2} />
             </AppShell>
         </>
     );
