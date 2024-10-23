@@ -1,8 +1,11 @@
 import { type UrlObject } from 'url';
 
+import type { TablerIconName } from '@/types/app/tabler-icon';
+
 interface Link {
     label: string;
     href: UrlObject | string;
+    icon?: TablerIconName;
 }
 
 interface Menu {
@@ -30,18 +33,22 @@ const menus: Menu[] = [
             {
                 label: 'Daftar Izin Proses',
                 href: '/permits/lists',
+                icon: 'IconClipboardList',
             },
             {
                 label: 'Daftar Jenis Izin',
                 href: '/permits/types',
+                icon: 'IconFileDigit',
             },
             {
                 label: 'Jumlah Pemohon Izin',
                 href: '/permits/applicants',
+                icon: 'IconFileDiff',
             },
             {
                 label: 'Standar Pelayanan Perizinan',
                 href: '/permits/service-standards',
+                icon: 'IconFileLambda',
             },
         ],
     },
