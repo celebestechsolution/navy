@@ -37,7 +37,7 @@ const NewsBlockTitle = ({ className, children, ...props }: React.HTMLAttributes<
 
 const NewsBlockSubTitle = ({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
     return (
-        <p className={cn('text-sm font-normal text-green-600', className)} {...props}>
+        <p className={cn('text-sm font-normal capitalize text-green-600', className)} {...props}>
             {children}
         </p>
     );
