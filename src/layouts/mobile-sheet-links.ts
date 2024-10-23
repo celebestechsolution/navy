@@ -104,14 +104,17 @@ const menus: Menu[] = [
             {
                 label: 'Profil DPMPTSP',
                 href: '/about/profile',
+                icon: 'IconBuildingBank',
             },
             {
                 label: 'Tugas Pokok & Fungsi',
                 href: '/about/duties',
+                icon: 'IconBooks',
             },
             {
                 label: 'Penghargaan',
                 href: '/about/awards',
+                icon: 'IconFileCertificate',
             },
         ],
     },

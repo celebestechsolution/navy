@@ -40,7 +40,10 @@ const AboutContent = () => {
                             <Link key={`${i}${item.label}`} href={item.href} className='group'>
                                 <Card className='shadow-none group-hover:bg-accent/75'>
                                     <CardHeader className='flex flex-row items-center justify-between space-y-0 p-5'>
-                                        <CardTitle className='text-primary'>{item.label}</CardTitle>
+                                        <div className='flex items-center gap-2'>
+                                            <TablerIcon name={item.icon!} className='stroke-2 text-primary' />
+                                            <CardTitle className='text-primary'>{item.label}</CardTitle>
+                                        </div>
                                         <TablerIcon name='IconChevronRight' className='stroke-2 text-primary' />
                                     </CardHeader>
                                 </Card>
