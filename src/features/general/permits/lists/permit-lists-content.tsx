@@ -1,6 +1,6 @@
 import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import { useFetchPermitLists } from '@/api/queries/permits/fetch-permit-lists';
+import { useFetchPermitLists } from '@/api/queries/fetch-permit-lists';
 
 import { Header } from '@/components/header';
 import { AppShell } from '@/components/shells/app-shell';

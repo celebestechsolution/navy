@@ -1,7 +1,9 @@
-import { axios } from '@/lib/axios';
-import { ApiResponse } from '@/types/api';
-import { PermitList } from '@/types/api/permit';
 import { useQuery } from '@tanstack/react-query';
+
+import type { ApiResponse } from '@/types/api';
+import type { PermitList } from '@/types/api/permit';
+
+import { axios } from '@/lib/axios';
 
 const fetchPermitLists = async () => {
     const { data } = await axios.get<ApiResponse<PermitList[]>>('/permit/process');
