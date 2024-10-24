@@ -4,7 +4,7 @@ const PageVersion = ({ label = 2 }: { label?: number | string }) => {
     return (
         <div className='absolute -top-3 right-2'>
             <Badge variant='outline' className='bg-background'>
-                Version : {label.toString()}
+                Page Version : {label.toString()}
             </Badge>
         </div>
     );
