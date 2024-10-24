@@ -24,7 +24,9 @@ const SectionNews = () => {
                         <NewsBlock key={item.id + index}>
                             <NewsBlock.Image src={item.image} alt={item.title} />
                             <NewsBlock.Body>
-                                <NewsBlock.Title>{item.title}</NewsBlock.Title>
+                                <Link className='group' href={`/latest-news/${item.slug}`}>
+                                    <NewsBlock.Title className='group-hover:underline'>{item.title}</NewsBlock.Title>
+                                </Link>
                                 <NewsBlock.SubTitle>{item.category}</NewsBlock.SubTitle>
                             </NewsBlock.Body>
                         </NewsBlock>
