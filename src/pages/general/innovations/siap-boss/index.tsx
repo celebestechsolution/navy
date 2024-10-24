@@ -14,7 +14,7 @@ const SiapBossPage: NextPageWithLayout = () => {
 
 SiapBossPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Siap Boss' className='bg-background'>
+        <RootLayout title='SIAP BOSS' className='bg-background'>
             <DetectDeviceLayout>
                 <MobileScreenLayout>
                     <MobileNavigation />

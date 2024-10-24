@@ -14,7 +14,7 @@ const JabatEratPage: NextPageWithLayout = () => {
 
 JabatEratPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Jabat Erat' className='bg-background'>
+        <RootLayout title='JABAT ERAT' className='bg-background'>
             <DetectDeviceLayout>
                 <MobileScreenLayout>
                     <MobileNavigation />
