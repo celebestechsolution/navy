@@ -32,7 +32,7 @@ export const useFetchRajin = () => {
     });
 };
 
-export const useFetchJabaterat = () => {
+export const useFetchJabatErat = () => {
     return useQuery({
         queryKey: ['jabat-erat-intro'],
         queryFn: () => fetchInnovationsIntro('jabat-erat'),

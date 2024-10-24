@@ -1,6 +1,6 @@
 import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import { useFetchJabaterat } from '@/api/queries/fetch-innovations-intro';
+import { useFetchJabatErat } from '@/api/queries/fetch-innovations-intro';
 
 import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
 import { Header } from '@/components/header';
@@ -29,7 +29,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 
 const JabatEratContent = () => {
-    const { data, status } = useFetchJabaterat();
+    const { data, status } = useFetchJabatErat();
 
     return (
         <>
