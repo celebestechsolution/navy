@@ -5,7 +5,10 @@ export type ComplaintList = {
     description: string;
     response?: string;
     respondent?: string;
-    status: string;
+    status: {
+        value: 'waiting' | 'decline' | 'accept';
+        label: string;
+    };
     created_at: string;
 };
 

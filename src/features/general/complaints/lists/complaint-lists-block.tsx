@@ -7,16 +7,16 @@ interface ComplaintListsBlockProps {
     index: number;
 }
 
-function getComplaintListStatusClassName(value: string): string {
-    if (value === 'menunggu') {
+function getComplaintListStatusClassName(status: ComplaintList['status']['value']): string {
+    if (status === 'waiting') {
         return 'text-yellow-600';
     }
 
-    if (value === 'ditolak') {
+    if (status === 'decline') {
         return 'text-destructive';
     }
 
-    if (value === 'diterima') {
+    if (status === 'accept') {
         return 'text-green-600';
     }
 
@@ -43,8 +43,8 @@ const ComplaintListsBlock = ({ item, index }: ComplaintListsBlockProps) => {
                 </div>
                 <div className='flex items-center justify-between text-sm text-muted-foreground'>
                     <span>Status: </span>
-                    <span className={cn('font-semibold capitalize', getComplaintListStatusClassName(item.status))}>
-                        {item.status}
+                    <span className={cn('font-semibold', getComplaintListStatusClassName(item.status.value))}>
+                        {item.status.label}
                     </span>
                 </div>
             </div>
