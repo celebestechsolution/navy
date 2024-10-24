@@ -20,3 +20,9 @@ export type PermitApplicant = {
     value: number;
     label: string;
 };
+
+export type PermitServiceStandard = {
+    id: number;
+    name: string;
+    url: string;
+};
