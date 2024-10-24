@@ -31,3 +31,10 @@ export const useFetchRajin = () => {
         queryFn: () => fetchInnovationsIntro('rajin'),
     });
 };
+
+export const useFetchJabaterat = () => {
+    return useQuery({
+        queryKey: ['jabat-erat-intro'],
+        queryFn: () => fetchInnovationsIntro('jabat-erat'),
+    });
+};

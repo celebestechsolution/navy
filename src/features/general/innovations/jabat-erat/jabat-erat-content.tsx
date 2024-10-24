@@ -1,33 +1,57 @@
-import Image from 'next/image';
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import jabatEratLogo from '../../../../../public/images/jabat-erat-logo.png';
+import { useFetchJabaterat } from '@/api/queries/fetch-innovations-intro';
+
+import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
+import { Header } from '@/components/header';
+import { PageVersion } from '@/components/page-version';
+import { AppShell } from '@/components/shells/app-shell';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+
+import { InnovationsIntroBlock } from '../innovations-intro-block';
+import { InnovationsIntroSkeleton } from '../innovations-intro-skeleton';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Inovasi',
+        type: 'link',
+        href: '/innovations',
+    },
+    {
+        label: 'JABAT ERAT',
+        type: 'page',
+    },
+];
 
 const JabatEratContent = () => {
+    const { data, status } = useFetchJabaterat();
+
     return (
         <>
-            <h1 className='text-2xl font-bold text-primary'>Jabat Erat</h1>
-            <div className='my-5 flex items-center justify-center'>
-                <Image className='aspect-square size-52' src={jabatEratLogo} alt='Jabat Erat Logo' />
-            </div>
-            <article className='space-y-5'>
-                <h2 className='text-lg font-semibold text-primary'>
-                    Kerjasama Pembinaan dan Bantuan Ekonomi Berkelanjutan
-                </h2>
-                <p className='text-sm text-muted-foreground'>
-                    JABAT ERAT Merupakan inovasi yang memfasilitasi pelaku usaha mulai dari perizinan usaha, peningkatan
-                    kualitas produk, fasilitasi bantuan permodalan dan fasilitasi pemasaran produk.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                    JABAT ERAT dirancang untuk membantu pelaku usaha mikro, kecil dan menengah dalam pengurusan
-                    legalitas usaha, kelengkapan administrasi produk untuk pebingkatan kualitas produk, membantu akses
-                    permodalan ke Lembaga Perbankan dan Lembaga Keuangan lainnya serta membantu akses pemasaran terutama
-                    di ritel modern, pusat perbelanjaan dan akses pemasaran lainnya
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                    JABAT ERAT tahun 2021 masuk dalam Top 50 lnovasi Pelayanan Publik dalam Kompetisi Inovasi Pelayanan
-                    Publik Tingkat Provinsi.
-                </p>
-            </article>
+            <AppShell className='bg-background-secondary'>
+                <section id='jabat-erat-breadcrumb'>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
+                </section>
+            </AppShell>
+            <AppShell className='relative border-t border-border'>
+                <section id='jabat-erat-content' className='space-y-6'>
+                    <Header>
+                        <Header.Title>JABAT ERAT</Header.Title>
+                    </Header>
+
+                    {status === 'pending' && <InnovationsIntroSkeleton />}
+
+                    {status === 'success' && <InnovationsIntroBlock item={data} title='JABAT ERAT' />}
+
+                    {status === 'error' && <FetchErrorBlock />}
+                </section>
+                <PageVersion label={2} />
+            </AppShell>
         </>
     );
 };
