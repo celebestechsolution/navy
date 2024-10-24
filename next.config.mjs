@@ -19,98 +19,23 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                destination: '/innovations',
-                source: '/general/innovations',
+                destination: '/innovations/:path*',
+                source: '/general/innovations/:path*',
                 permanent: true,
             },
             {
-                destination: '/innovations/siap-boss',
-                source: '/general/innovations/siap-boss',
+                destination: '/permits/:path*',
+                source: '/general/permits/:path*',
                 permanent: true,
             },
             {
-                destination: '/innovations/rajin',
-                source: '/general/innovations/rajin',
+                destination: '/complaints/:path*',
+                source: '/general/complaints/:path*',
                 permanent: true,
             },
             {
-                destination: '/innovations/paksi',
-                source: '/general/innovations/paksi',
-                permanent: true,
-            },
-            {
-                destination: '/innovations/kongsi',
-                source: '/general/innovations/kongsi',
-                permanent: true,
-            },
-            {
-                destination: '/innovations/prospektus',
-                source: '/general/innovations/prospektus',
-                permanent: true,
-            },
-            {
-                destination: '/innovations/jabat-erat',
-                source: '/general/innovations/jabat-erat',
-                permanent: true,
-            },
-            {
-                destination: '/permits/lists',
-                source: '/general/permits/lists',
-                permanent: true,
-            },
-            {
-                destination: '/permits/types',
-                source: '/general/permits/types',
-                permanent: true,
-            },
-            {
-                destination: '/permits/applicants',
-                source: '/general/permits/applicants',
-                permanent: true,
-            },
-            {
-                destination: '/permits/service-standards',
-                source: '/general/permits/service-standards',
-                permanent: true,
-            },
-            {
-                destination: '/complaints',
-                source: '/general/complaints',
-                permanent: true,
-            },
-            {
-                destination: '/complaints/lists',
-                source: '/general/complaints/lists',
-                permanent: true,
-            },
-            {
-                destination: '/complaints/categories',
-                source: '/general/complaints/categories',
-                permanent: true,
-            },
-            {
-                destination: '/complaints/create',
-                source: '/general/complaints/create',
-                permanent: true,
-            },
-            {
-                destination: '/about',
-                source: '/general/about',
-                permanent: true,
-            },
-            {
-                destination: '/about/profile',
-                source: '/general/about/profile',
-                permanent: true,
-            },
-            {
-                destination: '/about/duties',
-                source: '/general/about/duties',
-                permanent: true,
-            },
-            {
-                destination: '/about/awards',
-                source: '/general/about/awards',
+                destination: '/about/:path*',
+                source: '/general/about/:path*',
                 permanent: true,
             },
             // Guest
@@ -139,84 +64,20 @@ const nextConfig = {
                 destination: '/general/latest-news/:path*',
             },
             {
-                source: '/innovations',
-                destination: '/general/innovations',
+                source: '/innovations/:path*',
+                destination: '/general/innovations/:path*',
             },
             {
-                source: '/innovations/siap-boss',
-                destination: '/general/innovations/siap-boss',
+                source: '/permits/:path*',
+                destination: '/general/permits/:path*',
             },
             {
-                source: '/innovations/rajin',
-                destination: '/general/innovations/rajin',
+                source: '/complaints/:path*',
+                destination: '/general/complaints/:path*',
             },
             {
-                source: '/innovations/paksi',
-                destination: '/general/innovations/paksi',
-            },
-            {
-                source: '/innovations/kongsi',
-                destination: '/general/innovations/kongsi',
-            },
-            {
-                source: '/innovations/prospektus',
-                destination: '/general/innovations/prospektus',
-            },
-            {
-                source: '/innovations/jabat-erat',
-                destination: '/general/innovations/jabat-erat',
-            },
-            {
-                source: '/permits',
-                destination: '/general/permits',
-            },
-            {
-                source: '/permits/lists',
-                destination: '/general/permits/lists',
-            },
-            {
-                source: '/permits/types',
-                destination: '/general/permits/types',
-            },
-            {
-                source: '/permits/applicants',
-                destination: '/general/permits/applicants',
-            },
-            {
-                source: '/permits/service-standards',
-                destination: '/general/permits/service-standards',
-            },
-            {
-                source: '/complaints',
-                destination: '/general/complaints',
-            },
-            {
-                source: '/complaints/lists',
-                destination: '/general/complaints/lists',
-            },
-            {
-                source: '/complaints/categories',
-                destination: '/general/complaints/categories',
-            },
-            {
-                source: '/complaints/create',
-                destination: '/general/complaints/create',
-            },
-            {
-                source: '/about',
-                destination: '/general/about',
-            },
-            {
-                source: '/about/profile',
-                destination: '/general/about/profile',
-            },
-            {
-                source: '/about/duties',
-                destination: '/general/about/duties',
-            },
-            {
-                source: '/about/awards',
-                destination: '/general/about/awards',
+                source: '/about/:path*',
+                destination: '/general/about/:path*',
             },
             // Guest
             {
