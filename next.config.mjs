@@ -14,8 +14,8 @@ const nextConfig = {
                 permanent: true,
             },
             {
-                destination: '/latest-news',
-                source: '/general/latest-news',
+                destination: '/latest-news/:path*',
+                source: '/general/latest-news/:path*',
                 permanent: true,
             },
             {
@@ -135,8 +135,8 @@ const nextConfig = {
                 destination: '/general/home',
             },
             {
-                source: '/latest-news',
-                destination: '/general/latest-news',
+                source: '/latest-news/:path*',
+                destination: '/general/latest-news/:path*',
             },
             {
                 source: '/innovations',
