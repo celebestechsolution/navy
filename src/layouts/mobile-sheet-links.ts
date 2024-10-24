@@ -41,6 +41,47 @@ const menus: Menu[] = [
         ],
     },
     {
+        label: 'Inovasi',
+        links: [
+            {
+                label: 'SIAP BOSS',
+                href: '/innovations/siap-boss',
+                use: 'image',
+                image: '/images/siap-boss-logo.png',
+            },
+            {
+                label: 'KONGSI',
+                href: '/innovations/kongsi',
+                use: 'image',
+                image: '/images/kongsi-logo.png',
+            },
+            {
+                label: 'RAJIN',
+                href: '/innovations/rajin',
+                use: 'image',
+                image: '/images/rajin-logo.png',
+            },
+            {
+                label: 'PAKSI',
+                href: '/innovations/paksi',
+                use: 'image',
+                image: '/images/paksi-logo.png',
+            },
+            {
+                label: 'PROSPEKTUS',
+                href: '/innovations/prospektus',
+                use: 'image',
+                image: '/images/prospektus-logo.png',
+            },
+            {
+                label: 'JABAT ERAT',
+                href: '/innovations/jabat-erat',
+                use: 'image',
+                image: '/images/jabat-erat-logo.png',
+            },
+        ],
+    },
+    {
         label: 'Perizinan',
         links: [
             {
@@ -66,35 +107,6 @@ const menus: Menu[] = [
                 href: '/permits/service-standards',
                 use: 'icon',
                 icon: 'IconFileLambda',
-            },
-        ],
-    },
-    {
-        label: 'Inovasi',
-        links: [
-            {
-                label: 'SIAP BOSS',
-                href: '/innovations/siap-boss',
-                use: 'image',
-                image: '/images/siap-boss-logo.png',
-            },
-            {
-                label: 'Rajin',
-                href: '/innovations/rajin',
-                use: 'image',
-                image: '/images/rajin-logo.png',
-            },
-            {
-                label: 'Paksi',
-                href: '/innovations/paksi',
-                use: 'image',
-                image: '/images/paksi-logo.png',
-            },
-            {
-                label: 'Jabat Erat',
-                href: '/innovations/jabat-erat',
-                use: 'image',
-                image: '/images/jabat-erat-logo.png',
             },
         ],
     },
