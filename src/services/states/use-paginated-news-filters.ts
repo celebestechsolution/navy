@@ -16,7 +16,7 @@ type UsePaginatedNewsFilters = PaginatedNewsState & PaginatedNewsAction;
 export const usePaginatedNewsFilters = create<UsePaginatedNewsFilters>()((set) => ({
     search: '',
     page: 1,
-    setSearch: (search) => set({ search }),
+    setSearch: (search) => set({ page: 1, search }),
     nextPage: () => set((state) => ({ page: state.page + 1 })),
     previousPage: () => set((state) => ({ page: state.page - 1 })),
 }));
