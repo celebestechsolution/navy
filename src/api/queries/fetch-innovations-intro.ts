@@ -45,3 +45,10 @@ export const useFetchKongsi = () => {
         queryFn: () => fetchInnovationsIntro('kongsi'),
     });
 };
+
+export const useFetchProspektus = () => {
+    return useQuery({
+        queryKey: ['prospektus-intro'],
+        queryFn: () => fetchInnovationsIntro('prospektus'),
+    });
+};
