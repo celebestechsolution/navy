@@ -14,6 +14,7 @@ interface LinkUseIcon {
 
 type DefaultLink = {
     label: string;
+    guard: 'auth' | 'general';
     href: UrlObject | string;
 } & (LinkUseIcon | LinkUseImage);
 
@@ -27,12 +28,14 @@ const menus: Menu[] = [
         label: 'Umum',
         links: [
             {
+                guard: 'general',
                 label: 'Beranda',
                 href: '/',
                 use: 'icon',
                 icon: 'IconHome',
             },
             {
+                guard: 'general',
                 label: 'Berita Terkini',
                 href: '/latest-news',
                 use: 'icon',
@@ -44,36 +47,42 @@ const menus: Menu[] = [
         label: 'Inovasi',
         links: [
             {
+                guard: 'general',
                 label: 'SIAP BOSS',
                 href: '/innovations/siap-boss',
                 use: 'image',
                 image: '/images/siap-boss-logo.png',
             },
             {
+                guard: 'general',
                 label: 'KONGSI',
                 href: '/innovations/kongsi',
                 use: 'image',
                 image: '/images/kongsi-logo.png',
             },
             {
+                guard: 'general',
                 label: 'RAJIN',
                 href: '/innovations/rajin',
                 use: 'image',
                 image: '/images/rajin-logo.png',
             },
             {
+                guard: 'general',
                 label: 'PAKSI',
                 href: '/innovations/paksi',
                 use: 'image',
                 image: '/images/paksi-logo.png',
             },
             {
+                guard: 'general',
                 label: 'PROSPEKTUS',
                 href: '/innovations/prospektus',
                 use: 'image',
                 image: '/images/prospektus-logo.png',
             },
             {
+                guard: 'general',
                 label: 'JABAT ERAT',
                 href: '/innovations/jabat-erat',
                 use: 'image',
@@ -85,24 +94,28 @@ const menus: Menu[] = [
         label: 'Perizinan',
         links: [
             {
+                guard: 'general',
                 label: 'Daftar Izin Proses',
                 href: '/permits/lists',
                 use: 'icon',
                 icon: 'IconClipboardList',
             },
             {
+                guard: 'general',
                 label: 'Daftar Jenis Izin',
                 href: '/permits/types',
                 use: 'icon',
                 icon: 'IconFileDigit',
             },
             {
+                guard: 'general',
                 label: 'Jumlah Pemohon Izin',
                 href: '/permits/applicants',
                 use: 'icon',
                 icon: 'IconFileDiff',
             },
             {
+                guard: 'general',
                 label: 'Standar Pelayanan Perizinan',
                 href: '/permits/service-standards',
                 use: 'icon',
@@ -114,24 +127,28 @@ const menus: Menu[] = [
         label: 'Pengaduan',
         links: [
             {
+                guard: 'general',
                 label: 'Daftar Pengaduan',
                 href: '/complaints/lists',
                 use: 'icon',
                 icon: 'IconClipboardText',
             },
             {
+                guard: 'general',
                 label: 'Kategori Pengaduan & Dasar Hukum',
                 href: '/complaints/categories',
                 use: 'icon',
                 icon: 'IconFileText',
             },
             {
+                guard: 'auth',
                 label: 'Buat Pengaduan Baru',
                 href: '/complaints/create',
                 use: 'icon',
                 icon: 'IconClipboardPlus',
             },
             {
+                guard: 'auth',
                 label: 'Pengaduan Saya',
                 href: '/dashboard',
                 use: 'icon',
@@ -143,18 +160,21 @@ const menus: Menu[] = [
         label: 'Tentang DPMPTSP',
         links: [
             {
+                guard: 'general',
                 label: 'Profil DPMPTSP',
                 href: '/about/profile',
                 use: 'icon',
                 icon: 'IconBuildingBank',
             },
             {
+                guard: 'general',
                 label: 'Tugas Pokok & Fungsi',
                 href: '/about/duties',
                 use: 'icon',
                 icon: 'IconBooks',
             },
             {
+                guard: 'general',
                 label: 'Penghargaan',
                 href: '/about/awards',
                 use: 'icon',

@@ -11,6 +11,8 @@ interface MobileSheetItemProps {
 }
 
 const MobileSheetItem = ({ setOpen }: MobileSheetItemProps) => {
+    const [auth, setAuth] = React.useState<boolean>(true);
+
     const router = useRouter();
 
     const runCommand = React.useCallback((command: () => unknown) => {
@@ -29,6 +31,11 @@ const MobileSheetItem = ({ setOpen }: MobileSheetItemProps) => {
                             link.href.toString() === '/'
                                 ? link.href.toString() === router.asPath
                                 : router.asPath.startsWith(link.href.toString());
+
+                        if (!auth && link.guard === 'auth') {
+                            return null;
+                        }
+
                         return (
                             <Button
                                 key={link.label}
