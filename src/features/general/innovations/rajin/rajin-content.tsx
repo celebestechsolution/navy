@@ -1,35 +1,57 @@
-import Image from 'next/image';
+import type { BreadcrumbItem } from '@/types/app/breadcrumb-item';
 
-import rajinLogo from '../../../../../public/images/rajin-logo.png';
+import { useFetchRajin } from '@/api/queries/fetch-innovations-intro';
+
+import { FetchErrorBlock } from '@/components/blocks/fetch-error-block';
+import { Header } from '@/components/header';
+import { PageVersion } from '@/components/page-version';
+import { AppShell } from '@/components/shells/app-shell';
+import { SimpleBreadcrumb } from '@/components/simple-breadcrumb';
+
+import { InnovationsIntroBlock } from '../innovations-intro-block';
+import { InnovationsIntroSkeleton } from '../innovations-intro-skeleton';
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    {
+        label: 'Beranda',
+        type: 'link',
+        href: '/',
+    },
+    {
+        label: 'Inovasi',
+        type: 'link',
+        href: '/innovations',
+    },
+    {
+        label: 'RAJIN',
+        type: 'page',
+    },
+];
 
 const RajinContent = () => {
+    const { data, status } = useFetchRajin();
+
     return (
         <>
-            <h1 className='text-2xl font-bold text-primary'>Rajin</h1>
-            <div className='my-5 flex items-center justify-center'>
-                <Image className='aspect-square size-52' src={rajinLogo} alt='Rajin Logo' />
-            </div>
-            <article className='space-y-5'>
-                <h2 className='text-lg font-semibold text-primary'>Gerai Perijinan</h2>
-                <p className='text-sm text-muted-foreground'>
-                    Gerai Perizinan disingkat RAJIN merupakan inovasi pelayanan perizinan hingga kantor Kelurahan dan
-                    Desa yang terintegrasi dengan SIAP BOSS yang terbentuk berdasarkan SK Kadis DPMPTSP No.
-                    503/15/SK/DPMPTSP/2019 dan Peraturan Bupati No. 17 Tahun 2020.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                    RAJIN adalah Gerai pelayanan perizinan di tingkat desa/kelurahan yang berfungsi sebagai front office
-                    informasi dan pelayanan perizinan, media promosi usaha masyarakat dan potensi desa/kelurahan.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                    RAJIN bertujuan untuk meningkatkan kualitas pelayanan, meningkatkan minat masyarakat untuk berusaha
-                    meningkatkan kepercayaan masyarakat terhadap pemerintah dalam pemberian pelayanan publik dan
-                    terciptanya sinergitas dengan OPD terkait dalam mempromosikan potensi daerah.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                    RAJIN tahun 2021 masuk dalam Top 50 Inovasi Pelayanan Publik dalam Kompetisi Inovasi Pelayanan
-                    Publik Tingkat Provinsi.
-                </p>
-            </article>
+            <AppShell className='bg-background-secondary'>
+                <section id='rajin-breadcrumb'>
+                    <SimpleBreadcrumb items={breadcrumbItems} />
+                </section>
+            </AppShell>
+            <AppShell className='relative border-t border-border'>
+                <section id='rajin-content' className='space-y-6'>
+                    <Header>
+                        <Header.Title>RAJIN</Header.Title>
+                    </Header>
+
+                    {status === 'pending' && <InnovationsIntroSkeleton />}
+
+                    {status === 'success' && <InnovationsIntroBlock item={data} title='RAJIN' />}
+
+                    {status === 'error' && <FetchErrorBlock />}
+                </section>
+                <PageVersion label={2} />
+            </AppShell>
         </>
     );
 };

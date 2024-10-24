@@ -14,7 +14,7 @@ const RajinPage: NextPageWithLayout = () => {
 
 RajinPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Rajin'>
+        <RootLayout title='Rajin' className='bg-background'>
             <DetectDeviceLayout>
                 <MobileScreenLayout>
                     <MobileNavigation />

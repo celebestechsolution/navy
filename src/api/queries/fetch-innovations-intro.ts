@@ -24,3 +24,10 @@ export const useFetchPaksi = () => {
         queryFn: () => fetchInnovationsIntro('paksi'),
     });
 };
+
+export const useFetchRajin = () => {
+    return useQuery({
+        queryKey: ['rajin-intro'],
+        queryFn: () => fetchInnovationsIntro('rajin'),
+    });
+};
