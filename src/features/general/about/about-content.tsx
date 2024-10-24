@@ -41,7 +41,9 @@ const AboutContent = () => {
                                 <Card className='shadow-none group-hover:bg-accent/75'>
                                     <CardHeader className='flex flex-row items-center justify-between space-y-0 p-5'>
                                         <div className='flex items-center gap-2'>
-                                            <TablerIcon name={item.icon!} className='stroke-2 text-primary' />
+                                            {item.use === 'icon' && (
+                                                <TablerIcon name={item.icon} className='stroke-2 text-primary' />
+                                            )}
                                             <CardTitle className='text-primary'>{item.label}</CardTitle>
                                         </div>
                                         <TablerIcon name='IconChevronRight' className='stroke-2 text-primary' />

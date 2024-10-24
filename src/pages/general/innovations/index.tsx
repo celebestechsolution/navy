@@ -14,7 +14,7 @@ const InnovationsPage: NextPageWithLayout = () => {
 
 InnovationsPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Inovasi'>
+        <RootLayout title='Inovasi' className='bg-background'>
             <DetectDeviceLayout>
                 <MobileScreenLayout>
                     <MobileNavigation />
