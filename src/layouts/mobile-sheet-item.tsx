@@ -11,7 +11,7 @@ interface MobileSheetItemProps {
 }
 
 const MobileSheetItem = ({ setOpen }: MobileSheetItemProps) => {
-    const [auth, setAuth] = React.useState<boolean>(true);
+    const auth: boolean = true;
 
     const router = useRouter();
 
