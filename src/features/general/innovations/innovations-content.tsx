@@ -37,7 +37,7 @@ const InnovationsContent = () => {
                     </Header>
 
                     <div className='flex flex-col space-y-4'>
-                        {menus[2]['links'].map((item, i) => (
+                        {menus[1]['links'].map((item, i) => (
                             <Link key={`${i}${item.label}`} href={item.href} className='group'>
                                 <Card className='shadow-none group-hover:bg-accent/75'>
                                     <CardHeader className='flex flex-row items-center justify-between space-y-0 p-5'>
