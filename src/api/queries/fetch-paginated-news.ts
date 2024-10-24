@@ -32,7 +32,7 @@ export const useFetchPaginatedNews = () => {
     };
 
     return useQuery({
-        queryKey: ['home-news', filters],
+        queryKey: ['news', 'paginated', filters],
         queryFn: () => fetchPaginatedNews(filters),
         placeholderData: keepPreviousData,
     });

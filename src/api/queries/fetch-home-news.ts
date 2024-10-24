@@ -13,7 +13,7 @@ async function fetchHomeNews() {
 
 export const useFetchHomeNews = () => {
     return useQuery({
-        queryKey: ['home-news'],
+        queryKey: ['news', 'home'],
         queryFn: fetchHomeNews,
     });
 };
