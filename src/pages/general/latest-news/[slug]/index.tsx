@@ -2,8 +2,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
 import { NextPageWithLayout } from '@/types/app/next-layout';
 
-import { useFetchSingleNewsBySlug } from '@/api/queries/fetch-single-news';
-
+import { DetailNewsContent } from '@/features/general/latest-news/detail/detail-news-content';
 import { DetectDeviceLayout } from '@/layouts/detect-device-layout';
 import { GeneralLayout } from '@/layouts/general-layout';
 import { MobileNavigation } from '@/layouts/mobile-navigation';
@@ -17,12 +16,7 @@ export const getServerSideProps = (async ({ query }) => {
 type SingleNewsPageProps = InferGetServerSidePropsType<typeof getServerSideProps>;
 
 const SingleNewsPage: NextPageWithLayout<SingleNewsPageProps> = ({ slug }) => {
-    // TODO: Need Finishing;
-    const { data: news } = useFetchSingleNewsBySlug(slug);
-
-    console.log(news);
-
-    return <div>SingleNewsPage</div>;
+    return <DetailNewsContent slug={slug} />;
 };
 
 SingleNewsPage.getLayout = function getLayout(page: React.ReactElement) {
