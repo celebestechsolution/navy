@@ -38,3 +38,10 @@ export const useFetchJabatErat = () => {
         queryFn: () => fetchInnovationsIntro('jabat-erat'),
     });
 };
+
+export const useFetchKongsi = () => {
+    return useQuery({
+        queryKey: ['kongsi-intro'],
+        queryFn: () => fetchInnovationsIntro('kongsi'),
+    });
+};

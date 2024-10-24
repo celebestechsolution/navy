@@ -39,6 +39,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                destination: '/innovations/kongsi',
+                source: '/general/innovations/kongsi',
+                permanent: true,
+            },
+            {
                 destination: '/innovations/jabat-erat',
                 source: '/general/innovations/jabat-erat',
                 permanent: true,
@@ -143,6 +148,10 @@ const nextConfig = {
             {
                 source: '/innovations/paksi',
                 destination: '/general/innovations/paksi',
+            },
+            {
+                source: '/innovations/kongsi',
+                destination: '/general/innovations/kongsi',
             },
             {
                 source: '/innovations/jabat-erat',
