@@ -14,7 +14,7 @@ const PaksiPage: NextPageWithLayout = () => {
 
 PaksiPage.getLayout = function getLayout(page: React.ReactElement) {
     return (
-        <RootLayout title='Paksi'>
+        <RootLayout title='Paksi' className='bg-background'>
             <DetectDeviceLayout>
                 <MobileScreenLayout>
                     <MobileNavigation />

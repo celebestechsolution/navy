@@ -17,3 +17,10 @@ export const useFetchSiapBoss = () => {
         queryFn: () => fetchInnovationsIntro('siap-boss'),
     });
 };
+
+export const useFetchPaksi = () => {
+    return useQuery({
+        queryKey: ['paksi-intro'],
+        queryFn: () => fetchInnovationsIntro('paksi'),
+    });
+};
