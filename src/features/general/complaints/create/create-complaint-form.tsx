@@ -1,38 +1,25 @@
+import { useFetchComplaintCategories } from '@/api/queries/fetch-complaint-categories';
+import { useCreateComplaintAction } from '@/lib/actions/create-complaint-action';
+
 import { ImageUploader } from '@/components/image-uploader';
 import { SubmitButton } from '@/components/submit-button';
+import { TablerIcon } from '@/components/tabler-icon';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { useCreateComplaintAction } from '@/lib/actions/create-complaint-action';
-
-const categories = [
-    {
-        value: 'pengaduan-perizinan',
-        label: 'Pengaduan Perizinan',
-    },
-    {
-        value: 'gratifikasi',
-        label: 'Gratifikasi',
-    },
-    {
-        value: 'kode-etik',
-        label: 'Kode Etik',
-    },
-    {
-        value: 'whistleblowing',
-        label: 'Whistleblowing',
-    },
-] as const;
 
 const CreateComplaintForm = () => {
+    const { data: categories, status } = useFetchComplaintCategories();
+
     const { form, submit } = useCreateComplaintAction();
+
     return (
         <Form {...form}>
             <form id='login-form' onSubmit={form.handleSubmit(submit)} className='space-y-4'>
                 <FormField
                     control={form.control}
-                    name='full_name'
+                    name='name'
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Nama Lengkap</FormLabel>
@@ -58,7 +45,6 @@ const CreateComplaintForm = () => {
                             <FormLabel>Alamat</FormLabel>
                             <FormControl>
                                 <Input
-                                    autoFocus
                                     type='text'
                                     autoComplete='address'
                                     aria-label='Address'
@@ -72,13 +58,12 @@ const CreateComplaintForm = () => {
                 />
                 <FormField
                     control={form.control}
-                    name='phone_number'
+                    name='phone'
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Nomor Telepon</FormLabel>
                             <FormControl>
                                 <Input
-                                    autoFocus
                                     type='text'
                                     autoComplete='phone-number'
                                     aria-label='Phone Number'
@@ -92,7 +77,7 @@ const CreateComplaintForm = () => {
                 />
                 <FormField
                     control={form.control}
-                    name='category'
+                    name='categoryId'
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Kategori</FormLabel>
@@ -103,11 +88,17 @@ const CreateComplaintForm = () => {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    {categories.map((category, i) => (
-                                        <SelectItem key={i} value={category.value}>
-                                            {category.label}
+                                    {status === 'pending' && (
+                                        <SelectItem disabled value='-' className='justify-center py-4'>
+                                            <TablerIcon name='IconLoader' className='animate-spin' />
                                         </SelectItem>
-                                    ))}
+                                    )}
+                                    {status === 'success' &&
+                                        categories?.map((category, i) => (
+                                            <SelectItem key={i} value={category.id.toString()}>
+                                                {category.category}
+                                            </SelectItem>
+                                        ))}
                                 </SelectContent>
                             </Select>
                             <FormMessage />
