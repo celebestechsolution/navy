@@ -49,7 +49,9 @@ const LatestNewsContent = () => {
 
                     {status === 'error' && <FetchErrorBlock />}
 
-                    {status === 'success' && <LatestNewsPagination pagination={news.pagination} />}
+                    {status === 'success' && news.data.length > 0 && (
+                        <LatestNewsPagination pagination={news.pagination} />
+                    )}
                 </section>
 
                 <PageVersion label={2} />
